@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!--xml中引入注解-->
+    <!--开启注解配置，加载配置类的，具体加载什么，需要配置类自己去定义-->
+    <context:annotation-config />
+    <bean class="com.xschen.spring.annotation.d_importxml.config.AnnotationConfiguration"></bean>
+
+</beans>

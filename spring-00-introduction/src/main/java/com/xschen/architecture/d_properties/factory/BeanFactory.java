@@ -17,7 +17,7 @@ public class BeanFactory {
 
         try {
             // 必须使用类加载器读取resource文件夹下的配置文件
-            properties.load(BeanFactory.class.getClassLoader().getResourceAsStream("factory.properties"));
+            properties.load(BeanFactory.class.getClassLoader().getResourceAsStream("factory_d.properties"));
         } catch (IOException e) {
             // BeanFactory类的初始化都失败了，那后续就没有必要再执行下去了
             throw new ExceptionInInitializerError("BeanFactory initialize error, cause" + e.getMessage());

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--xml方式的setter注入-->
+    <bean id="person" class="com.xschen.spring.basic_di.b_constructor.bean.Person">
+        <constructor-arg index="0" value="xschen"></constructor-arg>
+        <constructor-arg index="1" value="18"></constructor-arg>
+    </bean>
+
+    <bean id="cat" class="com.xschen.spring.basic_di.b_constructor.bean.Cat">
+        <constructor-arg index="0" value="cute"></constructor-arg>
+        <constructor-arg index="1" ref="person"></constructor-arg>
+    </bean>
+</beans>

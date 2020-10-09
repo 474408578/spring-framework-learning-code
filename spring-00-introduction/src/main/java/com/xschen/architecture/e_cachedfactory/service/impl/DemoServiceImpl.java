@@ -1,8 +1,8 @@
-package com.xschen.architecture.d_properties.service.impl;
+package com.xschen.architecture.e_cachedfactory.service.impl;
 
-import com.xschen.architecture.d_properties.dao.DemoDao;
-import com.xschen.architecture.d_properties.factory.BeanFactory;
-import com.xschen.architecture.d_properties.service.DemoService;
+import com.xschen.architecture.e_cachedfactory.dao.DemoDao;
+import com.xschen.architecture.e_cachedfactory.factory.BeanFactory;
+import com.xschen.architecture.e_cachedfactory.service.DemoService;
 
 import java.util.List;
 
@@ -14,13 +14,12 @@ import java.util.List;
 public class DemoServiceImpl implements DemoService {
     DemoDao demoDao = (DemoDao) BeanFactory.getBean("demoDao");
 
-    // 会实例化多个不同的bean
+    // 打印出一样的bean
     public DemoServiceImpl() {
         for (int i = 0; i < 10; i++) {
             System.out.println(BeanFactory.getBean("demoDao"));
         }
     }
-
 
     @Override
     public List<String> findAll() {

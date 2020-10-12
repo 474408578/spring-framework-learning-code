@@ -22,5 +22,7 @@ public class InjectComplexFieldAnnoApplication {
 
         Cat cat = ctx.getBean(Cat.class);
         System.out.println(cat);
+
+        System.out.println(cat.getName());
     }
 }

@@ -8,6 +8,7 @@ import org.springframework.core.type.AnnotationMetadata;
 
 /**
  * @author xschen
+ * ImportBeanDefinitionRegistrar: 编程式向IOC容器导入Bean
  * WaiterRegistar本身不会注入到IOC容器中
  */
 

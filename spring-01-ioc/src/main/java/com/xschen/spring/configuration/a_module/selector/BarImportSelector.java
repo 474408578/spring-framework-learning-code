@@ -10,6 +10,8 @@ import java.util.function.Predicate;
 /**
  * @author xschen
  *
+ * ImportSelector声明式导入Bean
+ *
  * BarImportSelector本身不会注册到IOC容器
  *
  * ImportSelector可以根据筛选标准来指定导入哪些配置类

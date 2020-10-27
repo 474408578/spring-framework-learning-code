@@ -1,7 +1,5 @@
-package com.xschen.spring.postprocessor.a_quickstart.config;
+package com.xschen.spring.postprocessor.d_factorybean.config;
 
-import com.xschen.spring.postprocessor.a_quickstart.bean.Cat;
-import com.xschen.spring.postprocessor.a_quickstart.bean.Dog;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanPostProcessor;
 import org.springframework.stereotype.Component;
@@ -11,14 +9,10 @@ import org.springframework.stereotype.Component;
  */
 
 @Component
-public class AnimalBeanPostProcessor implements BeanPostProcessor {
+public class FactoryBeanPostProcessor implements BeanPostProcessor {
     @Override
     public Object postProcessBeforeInitialization(Object bean, String beanName) throws BeansException {
         System.out.println("拦截到Bean的初始化之前: " + bean);
-        // 当bean属于Cat时，返回其他类型的对象
-        if (bean instanceof Cat) {
-            return new Dog();
-        }
         return bean;
     }
 

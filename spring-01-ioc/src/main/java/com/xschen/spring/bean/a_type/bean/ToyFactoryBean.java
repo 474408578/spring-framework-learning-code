@@ -11,7 +11,7 @@ public class ToyFactoryBean implements FactoryBean<Toy> {
     private Child child;
 
     /**
-     * FactoryBean 本省的加载是伴随IOC容器的初始化时机一起的
+     * FactoryBean 本身的加载是伴随IOC容器的初始化时机一起的
      */
     public ToyFactoryBean() {
         System.out.println("ToyFactoryBean初始化了...");

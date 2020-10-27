@@ -9,6 +9,6 @@ import org.springframework.stereotype.Component;
 @Component
 public class Cat {
     public Cat() {
-        System.out.println("new cat");
+//        System.out.println("new cat");
     }
 }

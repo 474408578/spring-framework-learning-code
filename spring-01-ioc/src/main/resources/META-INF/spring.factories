@@ -1,0 +1,14 @@
+com.xschen.spring.configuration.z_spi.bean.DemoDao=\
+com.xschen.spring.configuration.z_spi.bean.DemoMySQLDaoImpl, \
+com.xschen.spring.configuration.z_spi.bean.DemoOracleDaoImpl
+
+com.xschen.spring.configuration.e_enablejdbc.config.EnableJdbc=\
+com.xschen.spring.configuration.e_enablejdbc.config.MySQLJdbcConfiguration, \
+com.xschen.spring.configuration.e_enablejdbc.config.OracleJdbcConfiguration, \
+com.xschen.spring.configuration.e_enablejdbc.config.H2JdbcConfiguration
+
+
+java.sql.Driver=\
+com.mysql.cj.jdbc.Driver,\
+oracle.jdbc.driver.OracleDriver,\
+org.h2.Driver

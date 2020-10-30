@@ -1,0 +1,2 @@
+com.xschen.spring.configuration.z_spi.bean.DemoMySQLDaoImpl
+com.xschen.spring.configuration.z_spi.bean.DemoOracleDaoImpl

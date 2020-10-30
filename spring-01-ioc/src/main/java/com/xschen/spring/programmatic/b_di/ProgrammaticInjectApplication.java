@@ -28,25 +28,26 @@ public class ProgrammaticInjectApplication {
                 .getBeanDefinition();
         ctx.registerBeanDefinition("mimi", catDefinition);
 
-//        BeanDefinition dogDefinition = BeanDefinitionBuilder.rootBeanDefinition(Dog.class)
-//                .addPropertyValue("name", "汪汪")
-//                .addPropertyReference("person", "laowang")
-//                .setScope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)
-//                .getBeanDefinition();
-//        ctx.registerBeanDefinition("wangwang", dogDefinition);
-
-        BeanDefinition lazyDogDefinition = BeanDefinitionBuilder.rootBeanDefinition(Dog.class)
+        // 原型bean的注册
+        BeanDefinition dogDefinition = BeanDefinitionBuilder.rootBeanDefinition(Dog.class)
+                .addPropertyValue("name", "汪汪")
                 .addPropertyReference("person", "laowang")
-                .addPropertyValue("name", "lazywangwang")
-                .setLazyInit(true)
+                .setScope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)
                 .getBeanDefinition();
-        ctx.registerBeanDefinition("lazywangwang", lazyDogDefinition);
+        ctx.registerBeanDefinition("wangwang", dogDefinition);
+
+//        BeanDefinition lazyDogDefinition = BeanDefinitionBuilder.rootBeanDefinition(Dog.class)
+//                .addPropertyReference("person", "laowang")
+//                .addPropertyValue("name", "lazywangwang")
+//                .setLazyInit(true)
+//                .getBeanDefinition();
+//        ctx.registerBeanDefinition("lazywangwang", lazyDogDefinition);
 
 
-        // refresh会触发bean的实例化
+        // refresh会触发非延迟
         ctx.refresh();
-
         System.out.println("ApplicationContext refreshed ……");
+
         Cat cat = ctx.getBean(Cat.class);
         System.out.println(cat);
 

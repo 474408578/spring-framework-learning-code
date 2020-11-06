@@ -7,7 +7,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
  */
 
 
-public class BeanPostProcessorQuickStartQpplication {
+public class BeanPostProcessorQuickStartApplication {
     public static void main(String[] args) {
         AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(
                 "com.xschen.spring.postprocessor.a_quickstart");

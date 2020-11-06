@@ -6,6 +6,8 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 
 /**
  * @author xschen
+ *
+ * 子容器的事件会向上传播到父容器，父容器的事件不会向下传播
  */
 
 
@@ -20,7 +22,8 @@ public class HierarchicalEventApplication {
         childCtx.setParent(parentCtx);
 
         /**
-         * 先刷新父容器。在刷新子容器
+         * 先刷新父容器。在刷新子容器,
+         * 父容器广播的事件只触发了一次监听，而子容器广播的事件触发了两次监听
          */
         parentCtx.refresh();
         childCtx.refresh();

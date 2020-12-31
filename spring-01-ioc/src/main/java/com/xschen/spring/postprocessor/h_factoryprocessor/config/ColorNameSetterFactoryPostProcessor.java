@@ -15,13 +15,12 @@ import java.util.stream.Stream;
  */
 
 @Component
-public class ColorNameSetterFactoryPostProcessro implements BeanFactoryPostProcessor {
+public class ColorNameSetterFactoryPostProcessor implements BeanFactoryPostProcessor {
 
     @Override
     public void postProcessBeanFactory(ConfigurableListableBeanFactory beanFactory) throws BeansException {
         Stream.of(beanFactory.getBeanDefinitionNames()).forEach(beanName -> {
             BeanDefinition beanDefinition = beanFactory.getBeanDefinition(beanName);
-
             if (StringUtils.hasText(beanDefinition.getBeanClassName())) {
                 try {
                     if (Class.forName(beanDefinition.getBeanClassName()).getSuperclass().equals(Color.class)) {

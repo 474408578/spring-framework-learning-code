@@ -15,12 +15,12 @@ public class Pen implements DisposableBean {
 
     @PreDestroy
     public void outwellInk() {
-        System.out.println("@PreDestroy - 钢笔中的墨水都放干净了^");
+        System.out.println("@PreDestroy - 钢笔中的墨水都放干净了……");
     }
 
     @Override
     public void destroy() throws Exception {
-        System.out.println("Pen DisposableBean写完字了^");
+        System.out.println("Pen DisposableBean写完字了……");
     }
 
     public Integer getInk() {

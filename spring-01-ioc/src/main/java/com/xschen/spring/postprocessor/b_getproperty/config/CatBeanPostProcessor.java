@@ -25,7 +25,7 @@ public class CatBeanPostProcessor implements BeanPostProcessor {
     public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException {
         if (bean instanceof Cat) {
             Cat cat = (Cat) bean;
-            System.out.println("初始化之前，cat的name为: " + cat.getName());
+            System.out.println("初始化之后，cat的name为: " + cat.getName());
         }
         return bean;
     }

@@ -7,6 +7,8 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 
 /**
  * @author xschen
+ *
+ * 不使用任何配置类/配置文件，向IOC容器注册一个Person对象，并注入属性值
  */
 
 
@@ -18,7 +20,7 @@ public class ProgrammaticQuickStartApplication {
                 .addPropertyValue("name", "zhangsan")
                 .getBeanDefinition();
         ctx.registerBeanDefinition("person", personDefinition);
-        // 需要手动refresh
+        // 如果预先没有传入配置文件/配置类/包扫描路径的话，需要手动refresh
         ctx.refresh();
 
         Person person = ctx.getBean(Person.class);

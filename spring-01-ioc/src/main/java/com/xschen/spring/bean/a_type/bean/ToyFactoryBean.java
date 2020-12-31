@@ -4,6 +4,10 @@ import org.springframework.beans.factory.FactoryBean;
 
 /**
  * @author xschen
+ *
+ * Bean的创建需要制定一些策略，或者依赖特殊的场景来分别创建
+ *
+ * todo: ToyFactoryBean根据小孩想要什么样的玩具来创建对应玩具的bean
  */
 
 
@@ -17,6 +21,10 @@ public class ToyFactoryBean implements FactoryBean<Toy> {
         System.out.println("ToyFactoryBean初始化了...");
     }
 
+    /**
+     * 使用setter注入child
+     * @param child
+     */
     public void setChild(Child child) {
         this.child = child;
     }

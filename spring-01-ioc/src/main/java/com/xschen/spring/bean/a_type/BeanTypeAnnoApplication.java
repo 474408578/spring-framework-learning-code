@@ -38,7 +38,7 @@ public class BeanTypeAnnoApplication {
 
         // 传bean id的话，取出的是生产出来的bean
         System.out.println(ctx.getBean("toyFactory"));
-        // 传bean id，在前面加&符号，可以去除Factory Bean本体
+        // 传bean id，在前面加&符号，可以取出Factory Bean本体
         System.out.println(ctx.getBean("&toyFactory"));
 
     }

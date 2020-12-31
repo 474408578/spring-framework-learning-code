@@ -16,7 +16,6 @@ import org.springframework.context.annotation.Configuration;
 public class BarConfiguration {
     @Bean
 //    @Conditional(ExistBossCondition.class) // Bar的创建需要Boss的存在
-    // 使用全限定类名
 //    @ConditionalOnBean(beanNames = "com.xschen.spring.configuration.c_conditional.component.Boss")
     // 使用类字节码
     @ConditionalOnBean(Boss.class)

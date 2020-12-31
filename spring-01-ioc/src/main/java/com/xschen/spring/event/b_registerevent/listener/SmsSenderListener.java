@@ -2,7 +2,6 @@ package com.xschen.spring.event.b_registerevent.listener;
 
 import com.xschen.spring.event.b_registerevent.event.RegisterSuccessEvent;
 import org.springframework.context.ApplicationListener;
-import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 /**

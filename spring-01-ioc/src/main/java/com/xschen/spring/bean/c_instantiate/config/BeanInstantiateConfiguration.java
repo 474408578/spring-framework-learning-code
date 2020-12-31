@@ -15,6 +15,7 @@ import org.springframework.context.annotation.Configuration;
 @ComponentScan("com.xschen.spring.bean.c_instantiate.bean")
 public class BeanInstantiateConfiguration {
 
+    // 借助FactoryBean创建Bean
     @Bean
     public BallBeanFactory ballBeanFactory() {
         return new BallBeanFactory();

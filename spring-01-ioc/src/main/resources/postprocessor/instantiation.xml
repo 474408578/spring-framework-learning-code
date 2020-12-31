@@ -9,5 +9,6 @@
 
     <bean class="com.xschen.spring.postprocessor.e_instantiation.config.BallFactoryInstantiationProcessor" />
 
+    <!--只创建对象，不给id赋值-->
     <bean id="ball2" class="com.xschen.spring.postprocessor.e_instantiation.bean.Ball" />
 </beans>

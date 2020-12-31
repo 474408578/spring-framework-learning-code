@@ -21,5 +21,4 @@ public class EnableJdbcApplication {
         System.out.println(dataSource.getUrl());
         System.out.println(dataSource.getDriverClassName());
     }
-
 }

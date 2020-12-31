@@ -9,7 +9,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  * @author xschen
  * todo: 基于xml的依赖注入
  *
- * dependency inject & dependency inject对比
+ * dependency lookup & dependency inject对比
  * 1、作用的目标对象不同
  *    依赖注入作用目标通常是类成员
  *    依赖查找作用目标通常是方法体内，也可以是方法体外

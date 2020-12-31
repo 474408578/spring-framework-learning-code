@@ -12,7 +12,7 @@ import java.util.stream.Stream;
 /**
  * @author xschen
  *
- * Animal的后置处理器
+ * Animal的后置处理器, 给所有的Animal赋属性值
  */
 
 //@Component

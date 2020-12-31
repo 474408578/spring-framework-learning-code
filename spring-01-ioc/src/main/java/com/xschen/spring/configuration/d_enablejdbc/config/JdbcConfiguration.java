@@ -10,6 +10,7 @@ import javax.sql.DataSource;
 
 /**
  * @author xschen
+ * todo: 注册数据源，加载连接池
  */
 
 @Configuration

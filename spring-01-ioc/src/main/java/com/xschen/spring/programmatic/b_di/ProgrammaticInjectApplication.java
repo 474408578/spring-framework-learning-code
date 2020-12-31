@@ -44,7 +44,7 @@ public class ProgrammaticInjectApplication {
 //        ctx.registerBeanDefinition("lazywangwang", lazyDogDefinition);
 
 
-        // refresh会触发非延迟
+        // refresh会触发非延迟加载的单实例bean的实例化和初始化
         ctx.refresh();
         System.out.println("ApplicationContext refreshed ……");
 

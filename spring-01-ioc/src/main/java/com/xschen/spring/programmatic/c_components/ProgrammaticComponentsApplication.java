@@ -48,6 +48,7 @@ public class ProgrammaticComponentsApplication {
 
         Set<BeanDefinition> animalDefinitions = scanner
                 .findCandidateComponents("com.xschen.spring.programmatic.c_components.bean");
+
         animalDefinitions.forEach(beanDefinition -> {
             MutablePropertyValues propertyValues = beanDefinition.getPropertyValues();
             String beanClassName = beanDefinition.getBeanClassName();

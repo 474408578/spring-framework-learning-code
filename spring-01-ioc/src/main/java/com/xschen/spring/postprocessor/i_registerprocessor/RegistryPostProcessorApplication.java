@@ -6,6 +6,9 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 
 /**
  * @author xschen
+ *
+ * BeanDefinitionRegistryPostProcessor的postProcessBeanDefinitionRegistry执行完毕后，
+ * 执行他的postProcessBeanFactory, 然后执行普通的BeanFactoryPostProcessor
  */
 
 

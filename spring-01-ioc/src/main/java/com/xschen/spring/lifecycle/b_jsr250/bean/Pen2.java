@@ -15,22 +15,22 @@ public class Pen2 {
     private Integer ink;
 
     public void open() {
-        System.out.println("init-method - 打开钢笔。。。");
+        System.out.println("init-method - 打开钢笔……");
     }
 
     public void close() {
-        System.out.println("destory-method - 合上钢笔。。。");
+        System.out.println("destory-method - 合上钢笔……");
     }
 
     @PostConstruct
     private void addInk() {
-        System.out.println("钢笔中已加满墨水……");
+        System.out.println("@PostConstruct - 钢笔中已加满墨水……");
         this.ink = 100;
     }
 
     @PreDestroy
     private void outwellInk() {
-        System.out.println("钢笔中的墨水都放干净了……");
+        System.out.println("@PreDestroy - 钢笔中的墨水都放干净了……");
         this.ink = 0;
     }
 

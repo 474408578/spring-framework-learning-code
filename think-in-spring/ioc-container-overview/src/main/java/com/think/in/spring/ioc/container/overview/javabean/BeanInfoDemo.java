@@ -1,4 +1,4 @@
-package com.xschen.spring.javabean;
+package com.think.in.spring.ioc.container.overview.javabean;
 
 import java.beans.BeanInfo;
 import java.beans.IntrospectionException;

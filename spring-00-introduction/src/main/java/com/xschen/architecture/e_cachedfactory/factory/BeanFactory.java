@@ -30,16 +30,18 @@ public class BeanFactory {
         // 双检锁保证beanMap中确实没有beanName对应的对象，有点类似单例
         if (!beanMap.containsKey(beanName)) {
             synchronized (BeanFactory.class) {
-                try {
-                    // 过了双检锁，确认没有，可以执行反射来创建
-                    Class<?> beanClazz = Class.forName(properties.getProperty(beanName));
-                    Object bean = beanClazz.newInstance();
-                    // 反射创建好之后，放入缓存之后再返回
-                    beanMap.put(beanName, bean);
-                } catch (ClassNotFoundException e) {
-                    throw new RuntimeException("BeanFactory have not [" + beanName + "] bean!", e);
-                } catch (InstantiationException | IllegalAccessException e) {
-                    throw new RuntimeException("[" + beanName + "] initialize error!", e);
+                if (!beanMap.containsKey(beanName)) {
+                    try {
+                        // 过了双检锁，确认没有，可以执行反射来创建
+                        Class<?> beanClazz = Class.forName(properties.getProperty(beanName));
+                        Object bean = beanClazz.newInstance();
+                        // 反射创建好之后，放入缓存之后再返回
+                        beanMap.put(beanName, bean);
+                    } catch (ClassNotFoundException e) {
+                        throw new RuntimeException("BeanFactory have not [" + beanName + "] bean!", e);
+                    } catch (InstantiationException | IllegalAccessException e) {
+                        throw new RuntimeException("[" + beanName + "] initialize error!", e);
+                    }
                 }
             }
         }

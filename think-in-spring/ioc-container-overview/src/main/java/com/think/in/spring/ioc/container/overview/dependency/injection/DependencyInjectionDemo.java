@@ -1,7 +1,6 @@
 package com.think.in.spring.ioc.container.overview.dependency.injection;
 
 import com.think.in.spring.ioc.container.overview.repository.UserRepository;
-import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.ObjectFactory;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;

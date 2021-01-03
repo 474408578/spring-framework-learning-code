@@ -33,10 +33,6 @@ public class BeanInfoDemo {
 //                        propertyDescriptor.createPropertyEditor()
                     }
                 });
-
-
-
-
     }
 
     static class StringtoIntegerPropertyEditor extends PropertyEditorSupport {

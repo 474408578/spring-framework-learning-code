@@ -3,8 +3,6 @@ package com.xschen.spring.event.b_registerevent;
 import com.xschen.spring.event.b_registerevent.service.RegisterService;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-import java.util.Arrays;
-
 /**
  * @author xschen
  */

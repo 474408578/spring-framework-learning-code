@@ -1,8 +1,8 @@
-package com.xschen.spring.basic_di.a_quickstart_set;
+package com.xschen.spring.basic_di.a_quickstart_setter;
 
-import com.xschen.spring.basic_di.a_quickstart_set.bean.Cat;
-import com.xschen.spring.basic_di.a_quickstart_set.bean.Person;
-import com.xschen.spring.basic_di.a_quickstart_set.config.QuickStartInjectBySetConfiguration;
+import com.xschen.spring.basic_di.a_quickstart_setter.bean.Cat;
+import com.xschen.spring.basic_di.a_quickstart_setter.bean.Person;
+import com.xschen.spring.basic_di.a_quickstart_setter.config.QuickStartInjectBySetConfiguration;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
@@ -13,6 +13,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 
 
 public class QuickStartInjectBySetAnnoApplication {
+
     public static void main(String[] args) {
         ApplicationContext ctx = new AnnotationConfigApplicationContext(QuickStartInjectBySetConfiguration.class);
         Person person = ctx.getBean(Person.class);

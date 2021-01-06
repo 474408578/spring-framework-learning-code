@@ -1,4 +1,4 @@
-package com.xschen.spring.basic_di.a_quickstart_set.bean;
+package com.xschen.spring.basic_di.a_quickstart_setter.bean;
 
 import lombok.*;
 
@@ -11,7 +11,8 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-public class Person {
+public class Cat {
     private String name;
-    private Integer age;
+    // 演示依赖注入
+    private Person master;
 }

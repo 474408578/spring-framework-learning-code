@@ -1,7 +1,7 @@
-package com.xschen.spring.basic_di.a_quickstart_set;
+package com.xschen.spring.basic_di.a_quickstart_setter;
 
-import com.xschen.spring.basic_di.a_quickstart_set.bean.Cat;
-import com.xschen.spring.basic_di.a_quickstart_set.bean.Person;
+import com.xschen.spring.basic_di.a_quickstart_setter.bean.Cat;
+import com.xschen.spring.basic_di.a_quickstart_setter.bean.Person;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -21,12 +21,13 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 
 public class QuickStartInjectBySetXmlApplication {
+
     public static void main(String[] args) {
-        BeanFactory factory = new ClassPathXmlApplicationContext("basic_di/inject-set.xml");
-        Person person = factory.getBean(Person.class);
+        BeanFactory beanFactory = new ClassPathXmlApplicationContext("basic_di/inject-setter.xml");
+        Person person = beanFactory.getBean(Person.class);
         System.out.println(person);
 
-        Cat cat = factory.getBean(Cat.class);
+        Cat cat = beanFactory.getBean(Cat.class);
         System.out.println(cat);
     }
 }

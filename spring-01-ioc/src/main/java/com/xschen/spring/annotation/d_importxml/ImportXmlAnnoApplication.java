@@ -15,6 +15,7 @@ import java.util.stream.Stream;
 
 
 public class ImportXmlAnnoApplication {
+
     public static void main(String[] args) {
         /**
          * 在xml中引入注解

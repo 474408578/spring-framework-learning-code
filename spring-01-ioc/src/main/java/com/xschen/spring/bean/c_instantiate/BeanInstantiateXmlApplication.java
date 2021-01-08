@@ -1,6 +1,7 @@
 package com.xschen.spring.bean.c_instantiate;
 
 import com.xschen.spring.bean.c_instantiate.bean.*;
+import org.springframework.beans.factory.ObjectProvider;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -10,7 +11,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 
 public class BeanInstantiateXmlApplication {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
 
         ApplicationContext ctx  = new ClassPathXmlApplicationContext("bean/bean-instantiate.xml");
         ctx.getBeansOfType(Car.class).forEach((name, car) -> {

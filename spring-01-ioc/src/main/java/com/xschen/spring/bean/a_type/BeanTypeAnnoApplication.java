@@ -15,6 +15,7 @@ import java.util.Map;
 
 
 public class BeanTypeAnnoApplication {
+
     public static void main(String[] args) {
         ApplicationContext ctx = new AnnotationConfigApplicationContext(BeanTypeConfiguration.class);
         /**
@@ -33,13 +34,13 @@ public class BeanTypeAnnoApplication {
         Toy toy2 = ctx.getBean(Toy.class);
         System.out.println(toy1 == toy2);
 
+        // 传入FactoryBean的Class来取出FactoryBean本体
         ToyFactoryBean factoryBean = ctx.getBean(ToyFactoryBean.class);
-        System.out.println(factoryBean);
+        System.out.println("ctx.getBean(ToyFactoryBean.class): " + factoryBean);
 
         // 传bean id的话，取出的是生产出来的bean
-        System.out.println(ctx.getBean("toyFactory"));
-        // 传bean id，在前面加&符号，可以取出Factory Bean本体
-        System.out.println(ctx.getBean("&toyFactory"));
-
+        System.out.println("ctx.getBean(\"toyFactory\"): " + ctx.getBean("toyFactory"));
+        // 传bean id，在前面加&符号，可以取出FactoryBean本体
+        System.out.println("ctx.getBean(\"&toyFactory\"): " + ctx.getBean("&toyFactory"));
     }
 }

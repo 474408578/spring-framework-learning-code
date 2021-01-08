@@ -8,6 +8,7 @@
 
     </bean>
 
+    <!--person bean的注入-->
     <bean class="com.xschen.spring.basic_di.g_complexfield.bean.Person">
         <property name="names">
             <array>

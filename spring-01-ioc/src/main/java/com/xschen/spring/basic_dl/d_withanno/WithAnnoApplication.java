@@ -7,11 +7,13 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import java.util.Map;
 
 /**
+ * 根据类上标注的注解，查找对应的bean
  * @author xschen
  */
 
 
 public class WithAnnoApplication {
+
     public static void main(String[] args) {
         ApplicationContext ctx = new ClassPathXmlApplicationContext("basic_dl/quickstart-withanno.xml");
         Map<String, Object> beans = ctx.getBeansWithAnnotation(Color.class);

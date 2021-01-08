@@ -9,7 +9,6 @@ import org.springframework.stereotype.Component;
  */
 
 @Component
-//@Scope("prototype") // 每次获取都创建一个bean实例，不指定默认为单例(Singleton)
 @Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE) // prototype
 public class Toy {
 }

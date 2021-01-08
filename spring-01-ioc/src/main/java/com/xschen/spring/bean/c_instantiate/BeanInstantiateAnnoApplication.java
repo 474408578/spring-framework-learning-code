@@ -6,11 +6,13 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 /**
+ * 通过FactoryBean来实例化bean
  * @author xschen
  */
 
 
 public class BeanInstantiateAnnoApplication {
+
     public static void main(String[] args) {
         ApplicationContext ctx = new AnnotationConfigApplicationContext(BeanInstantiateConfiguration.class);
         ctx.getBeansOfType(Ball.class).forEach((name, object) -> {

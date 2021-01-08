@@ -9,6 +9,6 @@ import org.springframework.context.annotation.ImportResource;
  */
 
 @Configuration
-@ImportResource("classpath:annotation/beans.xml")
+@ImportResource("classpath:annotation/import-xml-beans.xml")
 public class ImportXmlAnnotationConfiguration {
 }

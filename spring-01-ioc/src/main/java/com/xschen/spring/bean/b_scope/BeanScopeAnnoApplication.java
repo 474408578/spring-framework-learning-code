@@ -6,11 +6,13 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 /**
+ * 演示Bean的作用域
  * @author xschen
  */
 
 
 public class BeanScopeAnnoApplication {
+
     public static void main(String[] args) {
 
         ApplicationContext ctx = new AnnotationConfigApplicationContext(BeanScopeConfiguration.class);

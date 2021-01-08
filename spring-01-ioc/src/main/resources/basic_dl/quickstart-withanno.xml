@@ -4,14 +4,7 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xsi:schemaLocation="http://www.springframework.org/schema/beans
 https://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="black" class="com.xschen.spring.basic_dl.d_withanno.bean.Black">
-
-    </bean>
-    <bean id="red" class="com.xschen.spring.basic_dl.d_withanno.bean.Red">
-
-    </bean>
-
-    <bean id="dog" class="com.xschen.spring.basic_dl.d_withanno.bean.Dog">
-
-    </bean>
+    <bean id="black" class="com.xschen.spring.basic_dl.d_withanno.bean.Black" />
+    <bean id="red" class="com.xschen.spring.basic_dl.d_withanno.bean.Red" />
+    <bean id="dog" class="com.xschen.spring.basic_dl.d_withanno.bean.Dog" />
 </beans>

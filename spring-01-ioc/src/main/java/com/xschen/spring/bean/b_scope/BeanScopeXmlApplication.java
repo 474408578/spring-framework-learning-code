@@ -10,6 +10,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 
 public class BeanScopeXmlApplication {
+
     public static void main(String[] args) {
         ApplicationContext ctx = new ClassPathXmlApplicationContext("bean/bean-scope.xml");
         ctx.getBeansOfType(Child.class).forEach((name, child) -> {

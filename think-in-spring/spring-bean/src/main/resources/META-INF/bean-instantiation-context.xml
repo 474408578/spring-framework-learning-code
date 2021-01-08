@@ -10,8 +10,8 @@
     factory-method="createUser"/>
 
     <!-- 实例（Bean）方法实例化Bean -->
-    <bean id="user-by-instance-method" factory-bean="userFactory" factory-method="createUser"/>
     <bean id="userFactory" class="com.think.in.spring.bean.factory.DefaultUserFactory" />
+    <bean id="user-by-instance-method" factory-bean="userFactory" factory-method="createUser"/>
 
     <!-- FactoryBean实例化Bean -->
     <bean id="user-by-factory-bean" class="com.think.in.spring.bean.factory.UserFactoryBean" />

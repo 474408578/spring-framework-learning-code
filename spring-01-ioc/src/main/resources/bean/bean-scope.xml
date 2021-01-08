@@ -6,7 +6,8 @@
         https://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
 
 
-<context:component-scan base-package="com.xschen.spring.bean.b_scope.bean" />
+    <!--开启注解-->
+    <context:component-scan base-package="com.xschen.spring.bean.b_scope.bean" />
 
     <bean id="child1" class="com.xschen.spring.bean.b_scope.bean.Child">
         <property name="toy" ref="toy" />

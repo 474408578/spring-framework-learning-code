@@ -11,8 +11,9 @@
     <!--声明创建对象的工厂方法factory-method-->
     <bean id="car2" class="com.xschen.spring.bean.c_instantiate.bean.CarStaticFactory" factory-method="getCar" />
 
+    <!--实例（Bean）方法实例化Bean-->
     <bean id="carInstanceFactory" class="com.xschen.spring.bean.c_instantiate.bean.CarInstanceFactory" />
-
     <bean id="car3" factory-bean="carInstanceFactory" factory-method="getCar"/>
 
+    <bean id="ballByFactoryBean" class="com.xschen.spring.bean.c_instantiate.bean.BallBeanFactory" />
 </beans>

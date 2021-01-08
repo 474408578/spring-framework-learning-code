@@ -16,8 +16,6 @@ public class LazyInjectAnnoApplication {
 
         Dog dog = ctx.getBean(Dog.class);
         System.out.println(dog);
-
-
     }
 
 }

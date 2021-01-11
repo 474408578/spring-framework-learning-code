@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <import resource="classpath:/META-INF/dependency-lookup-context.xml" />
+
+    <!--xml方式的constructor注入, 它是一个特殊的byType类型，自然就没有byName和ByType之说-->
+    <bean class="com.think.in.spring.dependency.injection.UserHolder" autowire="constructor"/>
+
+
+</beans>

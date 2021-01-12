@@ -7,6 +7,25 @@
     <bean id="user" class="com.think.in.spring.ioc.container.overview.domain.User">
         <property name="id" value="1" />
         <property name="name" value="xschen" />
+        <property name="city" value="HANGZHOU" />
+        <!--数组类型, 逗号分隔-->
+        <!--<property name="cities" value="HANGZHOU, SHANGHAI" />-->
+        <property name="workCities">
+            <array>
+                <value>SHANGHAI</value>
+                <value>HANGZHOU</value>
+            </array>
+        </property>
+
+        <!--List类型-->
+        <property name="lifeCites">
+            <list>
+                <value>BEIJING</value>
+                <value>HANGZHOU</value>
+            </list>
+        </property>
+
+        <property name="configFileLocation" value="classpath:/META-INF/user-config.properties"/>
     </bean>
 
     <bean id="objectFactory" class="org.springframework.beans.factory.config.ObjectFactoryCreatingFactoryBean" >

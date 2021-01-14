@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
 public class SmsSenderListener implements ApplicationListener<RegisterSuccessEvent> {
 
     @Override
-    public void onApplicationEvent(RegisterSuccessEvent registerSuccessEvent) {
+    public void onApplicationEvent(RegisterSuccessEvent event) {
         System.out.println("监听到用户注册成功，发送短信……");
     }
 }

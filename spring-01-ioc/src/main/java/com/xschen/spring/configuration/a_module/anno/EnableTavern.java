@@ -22,11 +22,9 @@ import java.lang.annotation.*;
 @Documented
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.TYPE)
-// @Import可以导入配置类，ImportSelector的实现类，
-// ImportBeanDefinitionRegister的实现类，或者普通类。
-@Import({Boss.class,
-        BartenderConfiguration.class,
-        BarImportSelector.class,
-        WaiterRegistar.class})
+@Import({Boss.class, // 导入普通类
+        BartenderConfiguration.class, // 导入配置类
+        BarImportSelector.class, // 导入ImportSelector
+        WaiterRegistar.class}) // 导入ImportBeanDefinitionRegistrar
 public @interface EnableTavern {
 }

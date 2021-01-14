@@ -25,7 +25,7 @@ public class RegisterService implements ApplicationEventPublisherAware {
     }
 
     @Override
-    public void setApplicationEventPublisher(ApplicationEventPublisher publisher) {
+    public void setApplicationEventPublisher(ApplicationEventPublisher publisher) { // AnnotationConfigApplicationContext
         this.publisher = publisher;
     }
 }

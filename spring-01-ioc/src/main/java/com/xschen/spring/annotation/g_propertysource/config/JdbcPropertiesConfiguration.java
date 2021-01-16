@@ -5,6 +5,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 
 /**
+ * @PropertySource 引入Properties文件示例
  * @author xschen
  */
 

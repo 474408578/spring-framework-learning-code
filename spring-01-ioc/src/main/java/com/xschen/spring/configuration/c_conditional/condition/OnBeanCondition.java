@@ -29,13 +29,13 @@ public class OnBeanCondition implements Condition {
             }
         }
 
-        // 匹配BeanName
-        String[] beanNames = (String[]) attributes.get("beanNames");
-        for (String beanName : beanNames) {
-            if (!context.getBeanFactory().containsBeanDefinition(beanName)) {
-                return false;
-            }
-        }
+        // 匹配BeanName, 逐个校验IOC容器中是否包含Bean名称(依赖的bean名称)
+//        String[] beanNames = (String[]) attributes.get("beanNames");
+//        for (String beanName : beanNames) {
+//            if (!context.getBeanFactory().containsBeanDefinition(beanName)) {
+//                return false;
+//            }
+//        }
 
         return true;
     }

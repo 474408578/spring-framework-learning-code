@@ -5,11 +5,13 @@ import com.xschen.spring.annotation.g_propertysource.config.JdbcPropertiesConfig
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 /**
+ *
  * @author xschen
  */
 
 
 public class PropertySourcePropertiesApplication {
+
     public static void main(String[] args) {
         AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(
                 JdbcPropertiesConfiguration.class);

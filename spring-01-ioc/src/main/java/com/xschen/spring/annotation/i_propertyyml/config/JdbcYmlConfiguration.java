@@ -6,6 +6,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 
 /**
+ * @PropertySource 解析Yaml文件示例
  * @author xschen
  */
 

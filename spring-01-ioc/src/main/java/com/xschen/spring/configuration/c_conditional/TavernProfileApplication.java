@@ -13,6 +13,7 @@ import java.util.stream.Stream;
 
 
 public class TavernProfileApplication {
+
     public static void main(String[] args) {
         AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(TavernConfiguration.class);
         ctx.getEnvironment().setActiveProfiles("city");

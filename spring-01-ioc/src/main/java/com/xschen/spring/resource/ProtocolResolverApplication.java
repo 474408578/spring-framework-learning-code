@@ -21,6 +21,7 @@ public class ProtocolResolverApplication {
         resourceLoader.addProtocolResolver(dogProtocolResolver);
 
         Resource resource = resourceLoader.getResource("dog:Dog.txt");
+        // 装饰器模式，Java IO
         InputStream inputStream = resource.getInputStream();
         InputStreamReader reader = new InputStreamReader(inputStream, StandardCharsets.UTF_8);
         BufferedReader br = new BufferedReader(reader);

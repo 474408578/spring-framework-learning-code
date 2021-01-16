@@ -15,7 +15,8 @@ import java.lang.annotation.*;
 @Documented
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.TYPE)
-@Import({/*Boss.class,*/
+@Import({
+        Boss.class,
         BartenderConfiguration.class,
         WaiterRegistar.class,
         BarImportSelector.class

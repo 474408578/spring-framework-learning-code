@@ -6,7 +6,7 @@ import org.springframework.beans.factory.config.SingletonBeanRegistry;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 /**
- * 单体Bean注册实例
+ * 单体Bean注册示例
  *
  * @author xschen
  */

@@ -28,7 +28,7 @@ public class SingletonRegistrationDemo {
         // 启动Spring应用上下文
         applicationContext.refresh();
 
-        // 通过依赖查找的方式来获取userFactory
+        // 通过依赖查找的方式来获取外部的userFactory
         UserFactory userFactoryByLookUp = applicationContext.getBean("userFactory", UserFactory.class);
         System.out.println("userFactory == userFactoryByLookUp: " + (userFactory == userFactoryByLookUp));
 

@@ -15,8 +15,5 @@ public class RemoveBeanDefinitionApplication {
 
         Person james = (Person) ctx.getBean("james");
         System.out.println(james);
-
-
-
     }
 }

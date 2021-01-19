@@ -2,7 +2,7 @@ package com.xschen.spring.configuration.a_module.anno;
 
 import com.xschen.spring.configuration.a_module.component.Boss;
 import com.xschen.spring.configuration.a_module.config.BartenderConfiguration;
-import com.xschen.spring.configuration.a_module.registar.WaiterRegistar;
+import com.xschen.spring.configuration.a_module.registar.WaiterRegistrar;
 import com.xschen.spring.configuration.a_module.selector.BarImportSelector;
 import org.springframework.context.annotation.Import;
 
@@ -25,6 +25,6 @@ import java.lang.annotation.*;
 @Import({Boss.class, // 导入普通类
         BartenderConfiguration.class, // 导入配置类
         BarImportSelector.class, // 导入ImportSelector
-        WaiterRegistar.class}) // 导入ImportBeanDefinitionRegistrar
+        WaiterRegistrar.class}) // 导入ImportBeanDefinitionRegistrar
 public @interface EnableTavern {
 }

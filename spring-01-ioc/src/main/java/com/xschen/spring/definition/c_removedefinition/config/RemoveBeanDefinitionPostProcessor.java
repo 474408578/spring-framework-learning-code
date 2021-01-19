@@ -28,10 +28,11 @@ public class RemoveBeanDefinitionPostProcessor implements BeanFactoryPostProcess
         for (String beanDefinitionName : beanFactory.getBeanDefinitionNames()) {
             // 判断BeanDefinition对应的Bean是否为Person类型
             BeanDefinition beanDefinition = beanFactory.getBeanDefinition(beanDefinitionName);
+
             if (Person.class.getName().equals(beanDefinition.getBeanClassName())) {
                 // 判断Person的性别是否为male
-
                 TypedStringValue sex = (TypedStringValue) beanDefinition.getPropertyValues().get("sex");
+
                 if ("male".equals(sex.getValue())) {
                     registry.removeBeanDefinition(beanDefinitionName);
                 }

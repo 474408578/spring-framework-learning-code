@@ -7,9 +7,11 @@
     <bean id="person" class="com.xschen.spring.definition.d_merge.bean.Person" />
 
     <bean id="cat" class="com.xschen.spring.definition.d_merge.bean.Cat" parent="abstract-animal">
+        <!--<property name="person" ref="person" /> 不需要写了, 在abstract类型中已经指定了-->
         <property name="name" value="mimi" />
     </bean>
 
+    <!--注册一个abstract类型的bean-->
     <bean id="abstract-animal" class="com.xschen.spring.definition.d_merge.bean.Animal"  abstract="true">
         <property name="person" ref="person" />
     </bean>

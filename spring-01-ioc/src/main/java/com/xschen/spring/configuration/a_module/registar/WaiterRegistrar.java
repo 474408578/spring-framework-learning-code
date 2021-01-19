@@ -13,7 +13,7 @@ import org.springframework.core.type.AnnotationMetadata;
  */
 
 
-public class WaiterRegistar implements ImportBeanDefinitionRegistrar {
+public class WaiterRegistrar implements ImportBeanDefinitionRegistrar {
     @Override
     public void registerBeanDefinitions(AnnotationMetadata metadata,
                                         BeanDefinitionRegistry registry) {

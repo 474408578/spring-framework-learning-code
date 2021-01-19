@@ -1,8 +1,11 @@
 package com.think.in.spring.ioc.container.overview.domain;
 
 import com.think.in.spring.ioc.container.overview.enums.City;
+import org.springframework.beans.factory.BeanNameAware;
 import org.springframework.core.io.Resource;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
 import java.util.Arrays;
 import java.util.List;
 
@@ -13,7 +16,7 @@ import java.util.List;
  */
 
 
-public class User {
+public class User implements BeanNameAware {
 
     private Long id;
 
@@ -26,6 +29,9 @@ public class User {
     private List<City> lifeCites;
 
     private Resource configFileLocation;
+
+    // 当前Bean的名称
+    private String beanName;
 
     public Long getId() {
         return id;
@@ -76,6 +82,21 @@ public class User {
     }
 
     @Override
+    public void setBeanName(String name) {
+        this.beanName = name;
+    }
+
+    @PostConstruct
+    public void init() {
+        System.out.println("User Bean [" + beanName + "] 初始化……");
+    }
+
+    @PreDestroy
+    public void destory() {
+        System.out.println("User Bean [" + beanName + "] 销毁中……");
+    }
+
+    @Override
     public String toString() {
         return "User{" +
                 "id=" + id +
@@ -84,6 +105,7 @@ public class User {
                 ", workCities=" + Arrays.toString(workCities) +
                 ", lifeCites=" + lifeCites +
                 ", configFileLocation=" + configFileLocation +
+                ", beanName='" + beanName + '\'' +
                 '}';
     }
 

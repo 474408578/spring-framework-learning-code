@@ -5,6 +5,7 @@ import org.springframework.beans.BeansException;
 import org.springframework.beans.MutablePropertyValues;
 import org.springframework.beans.PropertyValues;
 import org.springframework.beans.factory.config.InstantiationAwareBeanPostProcessor;
+import org.springframework.context.annotation.Configuration;
 
 /**
  * @author xschen
@@ -26,13 +27,14 @@ public class BallFactoryInstantiationProcessor implements InstantiationAwareBean
         return null;
     }
 
-    @Override
-
     // 返回true，则执行postProcessProperties方法，否则不执行
+    @Override
     public boolean postProcessAfterInstantiation(Object bean, String beanName) throws BeansException {
         return true;
     }
 
+    // 如果bean被postProcessBeforeInstantiation方法执行后，就不会再执行postProcessProperties。
+    // 也就是postProcessProperties方法没有机会再影响postProcessBeforeInstantiation方法创建出来的对象。
     @Override
     public PropertyValues postProcessProperties(PropertyValues pvs, Object bean, String beanName) throws BeansException {
         if ("ball2".equals(beanName)) {

@@ -6,11 +6,13 @@ import org.springframework.beans.factory.support.RootBeanDefinition;
 import org.springframework.stereotype.Component;
 
 /**
+ * {@link MergedBeanDefinitionPostProcessor#postProcessMergedBeanDefinition(RootBeanDefinition, Class, String)} 示例
+ * 方法发生在Bean的实例化之后，自动注入之前
  * @author xschen
  */
 
 @Component
-public class MergeDefinitionPostProcessor implements MergedBeanDefinitionPostProcessor {
+public class MergedBeanDefinitionPostProcessorConfiguration implements MergedBeanDefinitionPostProcessor {
     @Override
     public void postProcessMergedBeanDefinition(RootBeanDefinition beanDefinition,
                                                 Class<?> beanType,

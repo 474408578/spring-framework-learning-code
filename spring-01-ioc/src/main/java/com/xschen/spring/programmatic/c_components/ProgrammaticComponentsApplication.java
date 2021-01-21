@@ -17,20 +17,13 @@ import java.util.Set;
 
 /**
  * @author xschen
+ * @see ClassPathBeanDefinitionScanner
  */
 
 
 public class ProgrammaticComponentsApplication {
     public static void main(String[] args) {
         AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext();
-
-        /* Person使用BeanDefinition构造
-        BeanDefinition personDefinition = BeanDefinitionBuilder
-                .rootBeanDefinition(Person.class)
-                .addPropertyValue("name", "老王")
-                .getBeanDefinition();
-        ctx.registerBeanDefinition("laowang", personDefinition);
-        */
 
         // Person使用xml配置文件
         XmlBeanDefinitionReader reader = new XmlBeanDefinitionReader(ctx);
@@ -50,11 +43,10 @@ public class ProgrammaticComponentsApplication {
                 .findCandidateComponents("com.xschen.spring.programmatic.c_components.bean");
 
         animalDefinitions.forEach(beanDefinition -> {
+            // 初始化Animal子类对象
             MutablePropertyValues propertyValues = beanDefinition.getPropertyValues();
             String beanClassName = beanDefinition.getBeanClassName();
-
-            propertyValues.addPropertyValue("name", beanClassName);
-
+            propertyValues.addPropertyValue("name",beanClassName);
             propertyValues.addPropertyValue("person", new RuntimeBeanReference("laowang"));
             ctx.registerBeanDefinition(Introspector.decapitalize(beanClassName.substring(beanClassName.lastIndexOf("."))),
                     beanDefinition);

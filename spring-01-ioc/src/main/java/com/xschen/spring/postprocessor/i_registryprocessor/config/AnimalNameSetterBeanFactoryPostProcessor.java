@@ -1,6 +1,6 @@
-package com.xschen.spring.postprocessor.i_registerprocessor.config;
+package com.xschen.spring.postprocessor.i_registryprocessor.config;
 
-import com.xschen.spring.postprocessor.i_registerprocessor.bean.Animal;
+import com.xschen.spring.postprocessor.i_registryprocessor.bean.Animal;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanDefinition;
 import org.springframework.beans.factory.config.BeanFactoryPostProcessor;
@@ -16,7 +16,7 @@ import java.util.stream.Stream;
  */
 
 //@Component
-public class AnimalNameSetterPostProcessor implements BeanFactoryPostProcessor {
+public class AnimalNameSetterBeanFactoryPostProcessor implements BeanFactoryPostProcessor {
     @Override
     public void postProcessBeanFactory(ConfigurableListableBeanFactory beanFactory) throws BeansException {
         System.out.println("AnimalNameSetterPostProcessor postProcessBeanFactory run ......");

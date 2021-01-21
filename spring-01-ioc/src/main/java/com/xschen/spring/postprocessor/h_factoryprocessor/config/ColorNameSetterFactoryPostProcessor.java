@@ -6,6 +6,7 @@ import org.springframework.beans.factory.config.BeanDefinition;
 import org.springframework.beans.factory.config.BeanFactoryPostProcessor;
 import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
 import org.springframework.stereotype.Component;
+import org.springframework.util.ClassUtils;
 import org.springframework.util.StringUtils;
 
 import java.util.stream.Stream;
@@ -22,12 +23,10 @@ public class ColorNameSetterFactoryPostProcessor implements BeanFactoryPostProce
         Stream.of(beanFactory.getBeanDefinitionNames()).forEach(beanName -> {
             BeanDefinition beanDefinition = beanFactory.getBeanDefinition(beanName);
             if (StringUtils.hasText(beanDefinition.getBeanClassName())) {
-                try {
-                    if (Class.forName(beanDefinition.getBeanClassName()).getSuperclass().equals(Color.class)) {
-                        beanDefinition.getPropertyValues().add("name", beanName);
-                    }
-                } catch (ClassNotFoundException e) {
-                    e.printStackTrace();
+                // 利用Spring提供的ClassUtils来避免捕捉异常
+                if (ClassUtils.resolveClassName(beanDefinition.getBeanClassName(), this.getClass().getClassLoader())
+                        .getSuperclass().equals(Color.class)) { // 判断父类是否为Color
+                    beanDefinition.getPropertyValues().addPropertyValue("name", beanName);
                 }
             }
         });

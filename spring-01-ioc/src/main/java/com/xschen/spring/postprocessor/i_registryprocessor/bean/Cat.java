@@ -1,4 +1,4 @@
-package com.xschen.spring.postprocessor.i_registerprocessor.bean;
+package com.xschen.spring.postprocessor.i_registryprocessor.bean;
 
 import org.springframework.stereotype.Component;
 

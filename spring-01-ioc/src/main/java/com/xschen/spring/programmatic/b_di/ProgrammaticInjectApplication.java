@@ -30,18 +30,19 @@ public class ProgrammaticInjectApplication {
 
         // 原型bean的注册
         BeanDefinition dogDefinition = BeanDefinitionBuilder.rootBeanDefinition(Dog.class)
-                .addPropertyValue("name", "汪汪")
+                .addPropertyValue("name", "wangwang")
                 .addPropertyReference("person", "laowang")
                 .setScope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)
                 .getBeanDefinition();
         ctx.registerBeanDefinition("wangwang", dogDefinition);
 
-//        BeanDefinition lazyDogDefinition = BeanDefinitionBuilder.rootBeanDefinition(Dog.class)
-//                .addPropertyReference("person", "laowang")
-//                .addPropertyValue("name", "lazywangwang")
-//                .setLazyInit(true)
-//                .getBeanDefinition();
-//        ctx.registerBeanDefinition("lazywangwang", lazyDogDefinition);
+        BeanDefinition lazyDogDefinition = BeanDefinitionBuilder.rootBeanDefinition(Dog.class)
+                .addPropertyValue("name", "lazywangwang")
+                .addPropertyReference("person", "laowang")
+                .setLazyInit(true)
+                .setPrimary(true) // 设置为primary
+                .getBeanDefinition();
+        ctx.registerBeanDefinition("lazywangwang", lazyDogDefinition);
 
 
         // refresh会触发非延迟加载的单实例bean的实例化和初始化
@@ -51,7 +52,7 @@ public class ProgrammaticInjectApplication {
         Cat cat = ctx.getBean(Cat.class);
         System.out.println(cat);
 
-        Dog dog = ctx.getBean(Dog.class);
+        Dog dog = (Dog) ctx.getBean(Dog.class);
         System.out.println(dog);
 
 

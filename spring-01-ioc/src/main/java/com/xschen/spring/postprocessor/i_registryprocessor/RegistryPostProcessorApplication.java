@@ -1,7 +1,7 @@
-package com.xschen.spring.postprocessor.i_registerprocessor;
+package com.xschen.spring.postprocessor.i_registryprocessor;
 
-import com.xschen.spring.postprocessor.i_registerprocessor.bean.Cat;
-import com.xschen.spring.postprocessor.i_registerprocessor.bean.Dog;
+import com.xschen.spring.postprocessor.i_registryprocessor.bean.Cat;
+import com.xschen.spring.postprocessor.i_registryprocessor.bean.Dog;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 /**
@@ -13,9 +13,10 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 
 
 public class RegistryPostProcessorApplication {
+
     public static void main(String[] args) {
         AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(
-                "com.xschen.spring.postprocessor.i_registerprocessor");
+                "com.xschen.spring.postprocessor.i_registryprocessor");
         Cat cat = ctx.getBean(Cat.class);
         System.out.println(cat);
 

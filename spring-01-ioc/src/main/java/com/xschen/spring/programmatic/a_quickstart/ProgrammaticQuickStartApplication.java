@@ -20,7 +20,7 @@ public class ProgrammaticQuickStartApplication {
                 .addPropertyValue("name", "zhangsan")
                 .getBeanDefinition();
         ctx.registerBeanDefinition("person", personDefinition);
-        // 如果预先没有传入配置文件/配置类/包扫描路径的话，需要手动refresh
+        // 在ApplicationContext的落地实现中，如果预先没有传入配置文件/配置类/包扫描路径的话，需要手动refresh
         ctx.refresh();
 
         Person person = ctx.getBean(Person.class);

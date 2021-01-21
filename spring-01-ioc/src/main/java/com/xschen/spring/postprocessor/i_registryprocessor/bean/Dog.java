@@ -1,6 +1,4 @@
-package com.xschen.spring.postprocessor.i_registerprocessor.bean;
-
-import org.springframework.stereotype.Component;
+package com.xschen.spring.postprocessor.i_registryprocessor.bean;
 
 /**
  * @author xschen

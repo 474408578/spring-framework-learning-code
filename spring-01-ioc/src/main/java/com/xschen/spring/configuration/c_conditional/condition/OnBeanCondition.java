@@ -18,6 +18,7 @@ public class OnBeanCondition implements Condition {
 
     @Override
     public boolean matches(ConditionContext context, AnnotatedTypeMetadata metadata) {
+        // 获取目标自定义注解ConditionalOnBean上的属性
         Map<String, Object> attributes = metadata.getAnnotationAttributes(
                 ConditionalOnBean.class.getName());
 

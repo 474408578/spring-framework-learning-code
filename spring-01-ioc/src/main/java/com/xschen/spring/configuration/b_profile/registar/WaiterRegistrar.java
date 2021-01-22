@@ -1,7 +1,7 @@
-package com.xschen.spring.configuration.c_conditional.registar;
+package com.xschen.spring.configuration.b_profile.registar;
 
-import com.xschen.spring.configuration.c_conditional.component.Bar;
-import com.xschen.spring.configuration.c_conditional.config.BarConfiguration;
+import com.xschen.spring.configuration.b_profile.component.Bar;
+import com.xschen.spring.configuration.b_profile.config.BarConfiguration;
 import org.springframework.context.annotation.ImportSelector;
 import org.springframework.core.type.AnnotationMetadata;
 
@@ -10,7 +10,7 @@ import org.springframework.core.type.AnnotationMetadata;
  */
 
 
-public class WaiterRegistar implements ImportSelector {
+public class WaiterRegistrar implements ImportSelector {
     @Override
     public String[] selectImports(AnnotationMetadata annotationMetadata) {
         return new String[] {Bar.class.getName(), BarConfiguration.class.getName()};

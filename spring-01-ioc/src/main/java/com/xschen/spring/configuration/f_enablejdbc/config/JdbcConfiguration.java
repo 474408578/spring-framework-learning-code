@@ -19,7 +19,7 @@ public class JdbcConfiguration {
     }
 
     @Bean
-    public DataSourceRegisterPostProcessor dataSourceRegisterPostProcessor() {
-        return new DataSourceRegisterPostProcessor();
+    public DataSourceRegistryPostProcessor dataSourceRegistryPostProcessor() {
+        return new DataSourceRegistryPostProcessor();
     }
 }

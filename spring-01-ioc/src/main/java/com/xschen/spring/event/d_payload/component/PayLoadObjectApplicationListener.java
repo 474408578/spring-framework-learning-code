@@ -5,6 +5,7 @@ import org.springframework.context.PayloadApplicationEvent;
 
 /**
  * @author xschen
+ * @see PayloadApplicationEvent  泛型，可监听某个特定类型的payload事件
  */
 
 

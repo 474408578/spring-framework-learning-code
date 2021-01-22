@@ -9,6 +9,7 @@ import org.springframework.core.env.Environment;
 import javax.sql.DataSource;
 
 /**
+ * 使用EnvironmentAware注入Environment对象
  * @author xschen
  */
 

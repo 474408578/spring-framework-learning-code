@@ -18,6 +18,8 @@ public class OnClassNameConditional implements Condition {
                 .getAnnotationAttributes(ConditionalOnClassName.class.getName())
                 .get("value");
         try {
+            // 判断classpath下是不是有指定的数据库连接驱动，使用类加载器加载，如果成功，则有，
+            // 如果抛出ClassNotFoundException，就代表没有
             Class.forName(className);
             return true;
         } catch (ClassNotFoundException e) {

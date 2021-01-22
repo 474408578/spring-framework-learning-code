@@ -1,11 +1,11 @@
 package com.xschen.spring.configuration.d_enablejdbc.config;
 
-import com.xschen.spring.configuration.d_enablejdbc.config.JdbcConfiguration;
 import org.springframework.context.annotation.Import;
 
 import java.lang.annotation.*;
 
 /**
+ * 声明模块装配的注解，模块装配的核心原则：自定义注解 + @Import导入组件
  * @author xschen
  */
 

@@ -18,6 +18,7 @@ public class HierarchicalEventApplication {
         parentCtx.addApplicationListener(new HierarchicalEventListener());
 
         AnnotationConfigApplicationContext childCtx = new AnnotationConfigApplicationContext();
+        // 注册监听器
         childCtx.addApplicationListener(new HierarchicalEventListener());
         childCtx.setParent(parentCtx);
 
@@ -28,6 +29,7 @@ public class HierarchicalEventApplication {
         parentCtx.refresh();
         childCtx.refresh();
 
+        // 发布事件
         parentCtx.publishEvent(new HierarchicalEvent("父容器发布的HierarchicalEvent"));
         childCtx.publishEvent(new HierarchicalEvent("子容器发布的HierarchicalEvent"));
     }

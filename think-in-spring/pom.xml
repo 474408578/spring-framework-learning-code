@@ -16,6 +16,7 @@
         <module>dependency-injection</module>
         <module>dependency-source</module>
         <module>bean-scope</module>
+        <module>event</module>
     </modules>
 
     <properties>

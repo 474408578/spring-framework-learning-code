@@ -18,8 +18,9 @@ import java.util.List;
  */
 
 
-public class DataSourceRegisterPostProcessor implements BeanDefinitionRegistryPostProcessor, EnvironmentAware {
+public class DataSourceRegistryPostProcessor implements BeanDefinitionRegistryPostProcessor, EnvironmentAware {
 
+    // @PropertySource外部化配置
     private Environment environment;
 
     @Override
@@ -44,6 +45,7 @@ public class DataSourceRegisterPostProcessor implements BeanDefinitionRegistryPo
             }
         }
 
+        // 存在驱动，注册DataSource
         if (driverClassName != null) {
             builder.addPropertyValue("driverClassName", driverClassName);
             registry.registerBeanDefinition("dataSource", builder.getBeanDefinition());

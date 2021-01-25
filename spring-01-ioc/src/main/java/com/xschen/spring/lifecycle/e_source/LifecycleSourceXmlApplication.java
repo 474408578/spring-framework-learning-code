@@ -13,7 +13,7 @@ public class LifecycleSourceXmlApplication {
 
     public static void main(String[] args) {
         ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext();
-        ctx.setConfigLocation("lifecycle/bean-source.xml");
+        ctx.setConfigLocation("lifecycle/bean-source.xml"); // 保存配置文件路径
 
         System.out.println("=======================刷新IOC容器========================");
 

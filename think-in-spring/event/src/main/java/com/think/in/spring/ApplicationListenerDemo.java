@@ -6,7 +6,6 @@ import org.springframework.context.event.ApplicationEventMulticaster;
 import org.springframework.context.event.ContextClosedEvent;
 import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.context.event.ContextStartedEvent;
-import org.springframework.context.support.GenericApplicationContext;
 import org.springframework.core.annotation.Order;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.scheduling.annotation.EnableAsync;
@@ -51,7 +50,7 @@ public class ApplicationListenerDemo implements ApplicationEventPublisherAware {
         context.register(MyApplicationListener.class);
 
 
-        // 方法2：基于Spring注解，向Spring应用上下文注册事件
+        // 方法2：基于Spring注解，向Spring应用上下文注册事件  @EventListener 的方式
 
         // 启动Spring应用上下文
         context.refresh(); // ContextRefreshedEvent
@@ -67,18 +66,19 @@ public class ApplicationListenerDemo implements ApplicationEventPublisherAware {
     public void setApplicationEventPublisher(ApplicationEventPublisher applicationEventPublisher) {
         applicationEventPublisher.publishEvent(new ApplicationEvent("Hello, World") {});
 
-        // PayloadApplicationEvent
+        // 发送PayloadApplicationEvent
         applicationEventPublisher.publishEvent("Hello, World");
-        applicationEventPublisher.publishEvent(new MyPayloadContextClosedEvent<>(this, "MyPayloadEvent"));
+        applicationEventPublisher.publishEvent(new MyPayLoadApplicationEvent(this, "MyPayloadEvent"));
     }
 
-    static class MyPayloadContextClosedEvent<String> extends PayloadApplicationEvent<String> {
+    // 此处需要强制使用MyPayLoadApplicationEvent<String>
+    static class MyPayLoadApplicationEvent<String> extends PayloadApplicationEvent<String> {
         /**
          * Create a new PayloadApplicationEvent.
          * @param source the object on which the event initially occurred (never {@code null})
          * @param payload the payload object (never {@code null})
          */
-        public MyPayloadContextClosedEvent(Object source, String payload) {
+        public MyPayLoadApplicationEvent(Object source, String payload) {
             super(source, payload);
         }
     }
@@ -89,12 +89,6 @@ public class ApplicationListenerDemo implements ApplicationEventPublisherAware {
             println("MyApplicationListener（onApplicationEvent） received ContextRefreshedEvent");
         }
     }
-
-//    @org.springframework.context.event.EventListener
-//    @Order(0)
-//    public void onPayloadApplicationEvent(MyPayloadContextClosedEvent<String> event) {
-//        println("onPayloadApplicationEvent - 接收到 Spring PayloadApplicationEvent：" + event);
-//    }
 
     @org.springframework.context.event.EventListener
     @Order(1) // 数字越小，优先级越高

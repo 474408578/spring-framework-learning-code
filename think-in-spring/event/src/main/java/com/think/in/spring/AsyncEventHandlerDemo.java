@@ -1,6 +1,5 @@
 package com.think.in.spring;
 
-import org.springframework.context.ApplicationEvent;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ApplicationEventMulticaster;
 import org.springframework.context.event.ContextClosedEvent;
@@ -33,7 +32,7 @@ public class AsyncEventHandlerDemo {
         context.addApplicationListener(new MySpringEventListener());
 
         // 2. 启动Spring应用上下文
-        context.refresh(); // initApplicationEventMulticaster
+        context.refresh(); // initApplicationEventMulticaster()
 
         // 依赖查找ApplicationEventMulticaster
         ApplicationEventMulticaster applicationEventMulticaster = context.getBean(AbstractApplicationContext.APPLICATION_EVENT_MULTICASTER_BEAN_NAME,
@@ -65,7 +64,7 @@ public class AsyncEventHandlerDemo {
         context.addApplicationListener(new ApplicationListener<MySpringEvent>() {
             @Override
             public void onApplicationEvent(MySpringEvent event) {
-                throw new RuntimeException("throw an Exception on propose");
+                throw new RuntimeException("throw an Exception on purpose");
             }
         });
 

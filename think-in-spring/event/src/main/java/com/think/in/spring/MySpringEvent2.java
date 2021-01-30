@@ -8,8 +8,8 @@ import org.springframework.context.ApplicationEvent;
  */
 
 
-public class MySpringEvent extends ApplicationEvent {
-    public MySpringEvent(Object message) {
+public class MySpringEvent2 extends MySpringEvent {
+    public MySpringEvent2(Object message) {
         super(message);
     }
 

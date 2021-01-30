@@ -13,7 +13,7 @@ import java.util.Set;
  * @author xschen
  * @see ApplicationContextEvent
  * @see AbstractApplicationContext #publishEvent(Object, ResolvableType)
- *
+ * @see AnnotationConfigApplicationContext#register(Class[])
  */
 
 
@@ -24,14 +24,13 @@ public class HierarchicalSpringEventPropagateDemo {
         AnnotationConfigApplicationContext parentContext = new AnnotationConfigApplicationContext();
         parentContext.setId("parent-context");
         // 注册MyListener到 parent Spring 应用上下文
-        parentContext.register(MyListener.class);
+        parentContext.register(MyListener.class); // 作用和 parentContext.addApplicationListener(new MyListener())一样
 
         // 2、创建current Spring 应用上下文
         AnnotationConfigApplicationContext currentContext = new AnnotationConfigApplicationContext();
         currentContext.setId("current-context");
         // 注册MyListener到 current Spring 应用上下文
-        currentContext.register(MyListener.class);
-
+        currentContext.register(MyListener.class); // currentContext.addApplicationListener(new MyListener());
         // 4、current->parent
         currentContext.setParent(parentContext);
 

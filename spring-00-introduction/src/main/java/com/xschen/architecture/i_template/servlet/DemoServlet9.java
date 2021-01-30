@@ -15,12 +15,14 @@ import java.io.IOException;
  */
 
 
-@WebServlet(urlPatterns = {"/demo7"})
-public class DemoServlet7 extends HttpServlet {
+@WebServlet(urlPatterns = {"/demo9"})
+public class DemoServlet9 extends HttpServlet {
+
     DemoService demoService = (DemoService) BeanFactory.getBean("demoService");
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         resp.getWriter().println(demoService.findAll());
+        demoService.add("bear", 666);
     }
 }

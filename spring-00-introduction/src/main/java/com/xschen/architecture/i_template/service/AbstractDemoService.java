@@ -2,8 +2,6 @@ package com.xschen.architecture.i_template.service;
 
 import com.xschen.architecture.i_template.utils.LogUtils;
 
-import java.util.List;
-
 /**
  * 模板模式
  * @author xschen

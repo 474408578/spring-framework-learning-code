@@ -130,9 +130,9 @@ public class BeanScopeDemo implements DisposableBean {
     public void destroy() throws Exception {
         System.out.println("当前 BeanScopeDemo Bean 正在销毁中...");
 
-        this.prototypeUser.destory();
-        this.prototypeUser1.destory();
-        this.prototypeUser2.destory();
+        this.prototypeUser.destroy();
+        this.prototypeUser1.destroy();
+        this.prototypeUser2.destroy();
 
         // 销毁集合对象的prototype, 遍历集合
         for (Map.Entry<String, User> entry : this.users.entrySet()) {
@@ -140,7 +140,7 @@ public class BeanScopeDemo implements DisposableBean {
             BeanDefinition beanDefinition = beanFactory.getBeanDefinition(beanName);
             if (beanDefinition.isPrototype()) {
                 User user = entry.getValue();
-                user.destory();
+                user.destroy();
             }
         }
         System.out.println("当前BeanScopeDemo Bean 销毁完成……");

@@ -92,7 +92,7 @@ public class User implements BeanNameAware {
     }
 
     @PreDestroy
-    public void destory() {
+    public void destroy() {
         System.out.println("User Bean [" + beanName + "] 销毁中……");
     }
 

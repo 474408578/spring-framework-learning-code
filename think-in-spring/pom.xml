@@ -17,6 +17,7 @@
         <module>dependency-source</module>
         <module>bean-scope</module>
         <module>event</module>
+        <module>bean-lifecycle</module>
     </modules>
 
     <properties>

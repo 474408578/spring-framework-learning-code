@@ -13,6 +13,11 @@
     <artifactId>bean-scope</artifactId>
 
     <dependencies>
+        <dependency>
+            <groupId>${groupId}</groupId>
+            <artifactId>ioc-container-overview</artifactId>
+            <version>${version}</version>
+        </dependency>
         <!--使用servlet3.1 api-->
         <dependency>
             <groupId>javax.servlet</groupId>
@@ -20,10 +25,19 @@
             <version>3.1.0</version>
             <scope>provided</scope>
         </dependency>
+
         <dependency>
-            <groupId>${groupId}</groupId>
-            <artifactId>ioc-container-overview</artifactId>
-            <version>${version}</version>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-commons</artifactId>
+            <version>2.2.0.RELEASE</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-context</artifactId>
+            <version>2.2.0.RELEASE</version>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 

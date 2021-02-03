@@ -4,6 +4,9 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
         https://www.springframework.org/schema/beans/spring-beans.xsd">
 
+    <!-- RootBeanDefinition 不需要合并，不存在parent-->
+    <!-- GenericBeanDefinition -->
+    <!-- 经过合并后 GenericBeanDefinition 变成 RootBeanDefinition -->
     <bean id="user" class="com.think.in.spring.ioc.container.overview.domain.User">
         <property name="id" value="1" />
         <property name="name" value="xschen" />
@@ -28,12 +31,16 @@
         <property name="configFileLocation" value="classpath:/META-INF/user-config.properties"/>
     </bean>
 
-    <bean id="objectFactory" class="org.springframework.beans.factory.config.ObjectFactoryCreatingFactoryBean" >
-        <property name="targetBeanName" value="user" />
-    </bean>
-
+    <!-- Generic BeanDefinition -->
+    <!-- 合并后 Generic BeanDefinition 变成 Root BeanDefinition, 并覆盖parent配置 -->
+    <!-- primary=true， 并增加一个address配置 -->
     <bean id="superUser" class="com.think.in.spring.ioc.container.overview.domain.SuperUser"
           parent="user" primary="true">
         <property name="address" value="杭州" />
     </bean>
+
+    <bean id="objectFactory" class="org.springframework.beans.factory.config.ObjectFactoryCreatingFactoryBean" >
+        <property name="targetBeanName" value="user" />
+    </bean>
+
 </beans>

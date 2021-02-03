@@ -11,7 +11,6 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
  * @author xschen
  */
 
-
 public class SingletonRegistrationDemo {
 
     public static void main(String[] args) {

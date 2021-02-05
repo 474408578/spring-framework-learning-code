@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/aop
+        https://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <bean id="orderService" class="com.xschen.spring.aop.a_xmlaspect.service.OrderServiceImpl" />
+
+    <bean id="financeService" class="com.xschen.spring.aop.a_xmlaspect.service.FinanceService" />
+
+    <bean id="logger" class="com.xschen.spring.aop.a_xmlaspect.component.Logger" />
+
+    <aop:config>
+        <!-- 声明一个切面 -->
+        <aop:aspect id="loggerAspect" ref="logger">
+            <aop:pointcut id="defaultPointcut" expression="execution(public * com.xschen.spring.aop.a_xmlaspect.service.*.*(..))" />
+            <!--advice-->
+            <aop:before method="beforePrint"
+                        pointcut="execution(public void com.xschen.spring.aop.a_xmlaspect.service.FinanceService.addMoney(double))" />
+
+            <aop:after method="afterPrint"
+                       pointcut="execution(public * com.xschen.spring.aop.a_xmlaspect.service.FinanceService.*(..))" />
+
+            <aop:after-returning method="afterReturningPrint"
+                                 pointcut-ref="defaultPointcut" />
+
+            <aop:after-throwing method="afterThrowingPrint"
+                                pointcut="execution(public * com.xschen.spring.aop.a_xmlaspect.service.*.*(..))" />
+        </aop:aspect>
+    </aop:config>
+</beans>

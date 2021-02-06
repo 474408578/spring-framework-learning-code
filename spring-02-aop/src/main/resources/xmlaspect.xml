@@ -13,6 +13,9 @@
 
     <bean id="logger" class="com.xschen.spring.aop.a_xmlaspect.component.Logger" />
 
+    <!-- XML配置文件开启注解AOP -->
+    <aop:aspectj-autoproxy />
+
     <aop:config>
         <!-- 声明一个切面 -->
         <aop:aspect id="loggerAspect" ref="logger">
@@ -28,7 +31,7 @@
                                  pointcut-ref="defaultPointcut" />
 
             <aop:after-throwing method="afterThrowingPrint"
-                                pointcut="execution(public * com.xschen.spring.aop.a_xmlaspect.service.*.*(..))" />
+                                pointcut="execution(public * com.xschen.spring.aop.a_xmlaspect.service.*.*(..)) throw Exception" />
         </aop:aspect>
     </aop:config>
 </beans>

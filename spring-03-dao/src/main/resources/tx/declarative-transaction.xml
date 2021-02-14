@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/context
+                           https://www.springframework.org/schema/context/spring-context.xsd
+                           http://www.springframework.org/schema/tx
+                           https://www.springframework.org/schema/tx/spring-tx.xsd
+                           http://www.springframework.org/schema/aop
+                           https://www.springframework.org/schema/aop/spring-aop.xsd">
+
+
+    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource" >
+        <property name="driverClassName" value="com.mysql.cj.jdbc.Driver"/>
+        <property name="url" value="jdbc:mysql://119.45.56.227:3306/testdb?characterEncoding=utf-8"/>
+        <property name="username" value="root"/>
+        <property name="password" value="123456"/>
+    </bean>
+
+    <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+        <property name="dataSource" ref="dataSource" />
+    </bean>
+
+    <!-- 包扫描 -->
+    <context:component-scan base-package="com.xschen.spring.transaction.c_declarativexml" />
+    <!-- 注解驱动 -->
+    <context:annotation-config />
+
+    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource" />
+    </bean>
+
+    <!-- 需要引入 tx 和 aop 名称空间 -->
+    <!-- 事务通知标签 -->
+    <tx:advice id="transactionAdvice" transaction-manager="transactionManager">
+        <tx:attributes>
+<!--            <tx:method name="saveAndQuery"/>-->
+<!--            <tx:method name="addMoney" />-->
+<!--            <tx:method name="subtractMoney" />-->
+<!--            <tx:method name="addMoney" isolation="DEFAULT" no-rollback-for="" propagation="" read-only="" rollback-for="" timeout="" />-->
+            <!-- isolation 事务隔离级别：默认为Default，即依据数据库默认的事务隔离级别来定 -->
+            <!-- timeout 事务超时时间，当事务执行超过指定时间后，事务会停止并回滚。单位为秒，-1代表永不超时 -->
+            <!-- rollback-for ：当方法触发指定异常时，事务回滚，需要传入异常类的全限定名。
+                                默认值为空，代表捕捉所有 RuntimeException 和 Error 的子类，
+                                一般情况下，在日常开发中，我们都会显式声明其为 Exception ，目的是一起捕捉非运行时异常 -->
+            <!-- no-rollback-for 当方法触发指定异常时，事务不回滚继续执行，需要传入异常类的全限定名。 -->
+            <!-- read-only 设置是否为只读事务。默认值 false ，代表读写型事务。
+                                当设置为 true 时，当前事务为只读事务，
+                                通常用于查询操作（此时不会有 setAutoCommit(false) 等操作，可以加快查询速度） -->
+            <!-- propagation 事务传播行为:  -->
+            <tx:method name="save*"/> <!-- 所有save开头的方法全部开启事务控制 -->
+            <tx:method name="select*"/> <!-- 所有select开头的方法全部开启事务控制 -->
+            <tx:method name="*"/> <!-- 任意方法均开启 -->
+        </tx:attributes>
+    </tx:advice>
+
+    <!--  配置AOP的增强  -->
+    <aop:config>
+        <aop:advisor advice-ref="transactionAdvice"
+                     pointcut="execution(* com.xschen.spring.transaction.c_declarativexml.service.*.*(..))" />
+    </aop:config>
+
+    <!-- xml与注解驱动混用: 开启事务的注解驱动， 与@EnableTransactionManagement的一致 -->
+    <tx:annotation-driven transaction-manager="transactionManager" />
+</beans>

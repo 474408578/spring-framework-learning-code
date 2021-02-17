@@ -1,0 +1,2 @@
+## 5. 定义 namespace 与 NamedspaceHandler 的映射
+http\://time.geekbang.org/schema/users.xsd = com/think/in/spring/configuration/metadata/users.xsd

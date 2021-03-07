@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper>
+    <resultMap id="addressMap" type="Address" >
+        <id property="id" column="id"/>
+        <result property="street" column="street" />
+        <result property="city" column="city" />
+        <result property="country" column="country" />
+    </resultMap>
+
+    <select id="find" resultMap="addressMap" >
+        SELECT * FROM t_address WHERE id = #{id:Long}
+    </select>
+
+    <select id="findAll" resultMap="addressMap" >
+        SELECT * FROM t_address
+        WHERE customer_id = #{customerId:Long}
+    </select>
+
+<!--    <select id="findByOrderId" resultMap="addressMap" >-->
+<!--        SELECT * FROM t_address-->
+<!--        WHERE order_id = #{orderId:Long}-->
+<!--    </select>-->
+
+    <select id="findByOrderId" resultMap="addressMap" >
+        SELECT * FROM t_address AS a JOIN t_order AS o
+        ON a.order_id = o.address_id
+        WHERE o.address_id = #{id}
+    </select>
+
+    <!--  -->
+    <insert id="save" keyProperty="address.id" useGeneratedKeys="true" >
+        INSERT INTO t_address (street, city, country, customer_id)
+        VALUES (#{address.street}, #{address.city}, #{address.country}, #{customerId})
+    </insert>
+</mapper>

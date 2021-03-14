@@ -12,7 +12,7 @@ import java.nio.charset.Charset;
  * 自定义实现
  *  实现 URLStreamHandler
  *  添加 -Djava.protocol.handler.pkgs 启动参数，指向 URLStreamHandler 实现类的包下
- *  
+ *
  * 简单继承 sun.net.www.protocol.x.Handler类
  * @author xschen
  */

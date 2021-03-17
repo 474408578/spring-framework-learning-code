@@ -1,4 +1,4 @@
-package com.xschen.spring.jpa.overview.domain;
+package com.xschen.spring.jpa.overview.ch1_6.domain;
 
 /**
  * 利用 UserDto 接口获得我们想要的结果

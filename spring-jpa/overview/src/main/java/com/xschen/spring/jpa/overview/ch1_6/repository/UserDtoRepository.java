@@ -1,8 +1,8 @@
-package com.xschen.spring.jpa.overview.repository;
+package com.xschen.spring.jpa.overview.ch1_6.repository;
 
-import com.xschen.spring.jpa.overview.domain.User;
-import com.xschen.spring.jpa.overview.domain.UserDto;
-import com.xschen.spring.jpa.overview.domain.UserSimpleDto;
+import com.xschen.spring.jpa.overview.ch1_6.domain.User;
+import com.xschen.spring.jpa.overview.ch1_6.domain.UserDto;
+import com.xschen.spring.jpa.overview.ch1_6.domain.UserSimpleDto;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
@@ -29,7 +29,7 @@ public interface UserDtoRepository extends JpaRepository<User, Long> {
      * @param id
      * @return
      */
-    @Query("SELECT new com.xschen.spring.jpa.overview.domain.UserDto(CONCAT(u.name, '123'), u.email, e.idCard) " +
+    @Query("SELECT new com.xschen.spring.jpa.overview.ch1_6.domain.UserDto(CONCAT(u.name, '123'), u.email, e.idCard) " +
             "FROM User u, UserExtend e WHERE u.id = e.userId AND u.id = :id")
     UserDto findByUserDtoId2(@Param("id") Long id);
 

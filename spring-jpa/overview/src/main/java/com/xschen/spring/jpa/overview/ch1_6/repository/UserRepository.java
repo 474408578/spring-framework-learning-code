@@ -1,6 +1,6 @@
-package com.xschen.spring.jpa.overview.repository;
+package com.xschen.spring.jpa.overview.ch1_6.repository;
 
-import com.xschen.spring.jpa.overview.domain.User;
+import com.xschen.spring.jpa.overview.ch1_6.domain.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;

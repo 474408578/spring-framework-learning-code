@@ -1,13 +1,7 @@
-package com.xschen.spring.jpa.overview.controller;
+package com.xschen.spring.jpa.overview.ch1_6.controller;
 
-import com.xschen.spring.jpa.overview.domain.User;
-import com.xschen.spring.jpa.overview.domain.UserDto;
-import com.xschen.spring.jpa.overview.domain.UserExtend;
-import com.xschen.spring.jpa.overview.domain.UserSimpleDto;
-import com.xschen.spring.jpa.overview.repository.PagingAndSortingUserRepository;
-import com.xschen.spring.jpa.overview.repository.UserDtoRepository;
-import com.xschen.spring.jpa.overview.repository.UserExtendRepository;
-import com.xschen.spring.jpa.overview.repository.UserRepository;
+import com.xschen.spring.jpa.overview.ch1_6.domain.*;
+import com.xschen.spring.jpa.overview.ch1_6.repository.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -18,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.PostConstruct;
 import java.util.List;
+import java.util.Optional;
 
 /**
  * @author xschen
@@ -35,6 +30,10 @@ public class UserController {
     private UserDtoRepository userDtoRepository;
     @Autowired
     private UserExtendRepository userExtendRepository;
+    @Autowired
+    private UserInfoRepository userInfoRepository;
+    @Autowired
+    private UserInfo2Repository userInfo2Repository;
 
     /**
      * 保存用户
@@ -60,14 +59,6 @@ public class UserController {
     @GetMapping(path = "user1")
     public List<User> getUserByName(@RequestParam("name") String name) {
         return userRepository.findByName(name);
-    }
-
-    @PostMapping(path = "user2",
-            consumes = MediaType.APPLICATION_JSON_VALUE,
-            produces = MediaType.APPLICATION_JSON_VALUE)
-    public User getUser(@RequestBody User user) {
-        User user1 = userRepository.findByUser(user);
-        return user1;
     }
 
     @GetMapping(path = "singleUser1")
@@ -121,6 +112,18 @@ public class UserController {
         return userSimpleDto;
     }
 
+    @PostMapping("userInfo")
+    public UserInfo getUserInfoByUserInfoId(@RequestBody UserInfoId userInfoId) {
+        Optional<UserInfo> userInfo = userInfoRepository.findById(userInfoId);
+        return userInfo.get();
+    }
+
+    @PostMapping("userInfo2")
+    public UserInfo2 getUserInfo2ByUserInfoId2(@RequestBody UserInfoId2 userInfoId2) {
+        Optional<UserInfo2> userInfo2 = userInfo2Repository.findById(userInfoId2);
+        return userInfo2.get();
+    }
+
     @PostConstruct
     private void initData() {
         User xschen = User.builder().name("xschen").email("1638392300@qq.com").build();
@@ -129,5 +132,12 @@ public class UserController {
         userRepository.save(xiangsong);
         UserExtend userExtend = UserExtend.builder().userId(1L).age(23).idCard("123456").build();
         userExtendRepository.save(userExtend);
+
+        UserInfo userinfo = UserInfo.builder().age(23).name("song").telephone("123456").build();
+        userInfoRepository.save(userinfo);
+
+        UserInfoId2 userInfoId2 = UserInfoId2.builder().name("songsong").telephone("123456").build();
+        UserInfo2 userInfo2 = UserInfo2.builder().age(23).userInfoId2(userInfoId2).build();
+        userInfo2Repository.save(userInfo2);
     }
 }

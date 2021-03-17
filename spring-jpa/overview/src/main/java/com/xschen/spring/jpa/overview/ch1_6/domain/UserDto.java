@@ -1,4 +1,4 @@
-package com.xschen.spring.jpa.overview.domain;
+package com.xschen.spring.jpa.overview.ch1_6.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

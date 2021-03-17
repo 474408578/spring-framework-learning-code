@@ -1,4 +1,4 @@
-package com.xschen.spring.jpa.overview.domain;
+package com.xschen.spring.jpa.overview.ch1_6.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -19,10 +19,11 @@ import javax.persistence.Id;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class User {
+public class UserExtend {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String name;
-    private String email;
+    private Long userId;
+    private String idCard;
+    private Integer age;
 }

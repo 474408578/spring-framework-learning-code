@@ -22,6 +22,8 @@ public class User implements BeanNameAware {
 
     private String name;
 
+    private Company company;
+
     private City city;
 
     private City[] workCities;
@@ -47,6 +49,14 @@ public class User implements BeanNameAware {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public Company getCompany() {
+        return company;
+    }
+
+    public void setCompany(Company company) {
+        this.company = company;
     }
 
     public City getCity() {
@@ -101,6 +111,7 @@ public class User implements BeanNameAware {
         return "User{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
+                ", company=" + company +
                 ", city=" + city +
                 ", workCities=" + Arrays.toString(workCities) +
                 ", lifeCities=" + lifeCities +

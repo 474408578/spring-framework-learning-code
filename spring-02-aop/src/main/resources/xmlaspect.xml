@@ -19,7 +19,9 @@
     <aop:config>
         <!-- 声明一个切面 -->
         <aop:aspect id="loggerAspect" ref="logger">
+            <!-- 抽取通用的 AspectJ 注解 -->
             <aop:pointcut id="defaultPointcut" expression="execution(public * com.xschen.spring.aop.a_xmlaspect.service.*.*(..))" />
+
             <!--advice-->
             <aop:before method="beforePrint"
                         pointcut="execution(public void com.xschen.spring.aop.a_xmlaspect.service.FinanceService.addMoney(double))" />

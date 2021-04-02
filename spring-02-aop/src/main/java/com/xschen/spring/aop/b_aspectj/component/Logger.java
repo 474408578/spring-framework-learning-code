@@ -9,11 +9,11 @@ import org.springframework.stereotype.Component;
  * @author xschen
  */
 
-@Aspect
+@Aspect // 切面类
 @Component
 public class Logger {
 
-    @Before("execution(public * com.xschen.spring.aop.b_aspectj.service.FinanceService.*(..))")
+    @Before("execution(public * com.xschen.spring.aop.b_aspectj.service.FinanceService.*(..))")  // pointcut
     public void beforePrint() {
         System.out.println("Logger beforePrint run ......");
     }

@@ -1,4 +1,4 @@
-package com.xschen.spring.transation.utils;
+package com.xschen.spring.transaction.utils;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -17,7 +17,7 @@ public class JdbcUtils {
     public static final String JDBC_URL = "jdbc:mysql://119.45.56.227:3306/testdb?characterEncoding=utf-8";
 
     public static Connection getConnection() {
-        // threadlocal有，直接取出
+        // threadLocal有，直接取出
         if (connectionThreadLocal.get() != null) {
             return connectionThreadLocal.get();
         }

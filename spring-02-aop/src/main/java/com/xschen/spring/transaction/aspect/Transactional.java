@@ -1,8 +1,9 @@
-package com.xschen.spring.transation.aspect;
+package com.xschen.spring.transaction.aspect;
 
 import java.lang.annotation.*;
 
 /**
+ * 切入点
  * @author xschen
  */
 

@@ -1,6 +1,6 @@
-package com.xschen.spring.transation.dao;
+package com.xschen.spring.transaction.dao;
 
-import com.xschen.spring.transation.utils.JdbcUtils;
+import com.xschen.spring.transaction.utils.JdbcUtils;
 import org.springframework.stereotype.Repository;
 
 import java.sql.Connection;

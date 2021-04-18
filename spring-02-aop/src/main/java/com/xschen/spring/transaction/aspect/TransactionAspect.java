@@ -1,6 +1,6 @@
-package com.xschen.spring.transation.aspect;
+package com.xschen.spring.transaction.aspect;
 
-import com.xschen.spring.transation.utils.JdbcUtils;
+import com.xschen.spring.transaction.utils.JdbcUtils;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 import java.sql.Connection;
 
 /**
- * 事务切面类
+ * 事务切面类, 实现事务控制
  * @author xschen
  */
 
@@ -17,7 +17,13 @@ import java.sql.Connection;
 @Component
 public class TransactionAspect {
 
-    @Around("@annotation(com.xschen.spring.transation.aspect.Transactional)")
+    /**
+     * 基于注解的切入点表达式
+     * @param joinPoint
+     * @return
+     * @throws Throwable
+     */
+    @Around("@annotation(com.xschen.spring.transaction.aspect.Transactional)")
     public Object doWithTransaction(ProceedingJoinPoint joinPoint) throws Throwable {
         Connection connection = JdbcUtils.getConnection();
         // 开启事务

@@ -13,16 +13,16 @@ import org.springframework.stereotype.Component;
 
 @Component
 @Aspect
-public class TransationAspect implements Ordered {
+public class TransactionAspect implements Ordered {
 
     @Before("execution(* com.xschen.spring.aop.d_order.service..UserService.*(..))")
     public void beginTransaction() {
-        System.out.println("TransationAspect 开启事务 ......");
+        System.out.println("TransactionAspect 开启事务 ......");
     }
 
     @Override
     public int getOrder() {
-        return Ordered.HIGHEST_PRECEDENCE - 2;
+        return Ordered.HIGHEST_PRECEDENCE + 1;
     }
 }
 

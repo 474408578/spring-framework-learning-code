@@ -1,4 +1,4 @@
-package com.xschen.spring.transation.config;
+package com.xschen.spring.aop.f_introduction.configuration;
 
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -9,8 +9,7 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
  */
 
 @Configuration
+@ComponentScan(value = "com.xschen.spring.aop.f_introduction")
 @EnableAspectJAutoProxy
-@ComponentScan("com.xschen.spring.transation")
-public class TransactionAspectConfiguration {
-
+public class IntroductionConfiguration {
 }

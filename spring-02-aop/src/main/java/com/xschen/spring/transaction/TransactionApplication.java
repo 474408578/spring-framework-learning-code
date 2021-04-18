@@ -1,7 +1,7 @@
-package com.xschen.spring.transation;
+package com.xschen.spring.transaction;
 
-import com.xschen.spring.transation.config.TransactionAspectConfiguration;
-import com.xschen.spring.transation.service.FinanceService;
+import com.xschen.spring.transaction.config.TransactionAspectConfiguration;
+import com.xschen.spring.transaction.service.FinanceService;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 /**

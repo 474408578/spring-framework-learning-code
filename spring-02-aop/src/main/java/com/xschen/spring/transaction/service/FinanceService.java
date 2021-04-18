@@ -1,7 +1,7 @@
-package com.xschen.spring.transation.service;
+package com.xschen.spring.transaction.service;
 
-import com.xschen.spring.transation.aspect.Transactional;
-import com.xschen.spring.transation.dao.FinanceDao;
+import com.xschen.spring.transaction.aspect.Transactional;
+import com.xschen.spring.transaction.dao.FinanceDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

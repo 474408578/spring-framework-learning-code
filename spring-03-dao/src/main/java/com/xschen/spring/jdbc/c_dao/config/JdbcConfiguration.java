@@ -3,6 +3,7 @@ package com.xschen.spring.jdbc.c_dao.config;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 
 import javax.sql.DataSource;
@@ -24,8 +25,8 @@ public class JdbcConfiguration {
         return dataSource;
     }
 
-//    @Bean
-//    public JdbcTemplate jdbcTemplate() {
-//        return new JdbcTemplate(dataSource());
-//    }
+    //@Bean
+    //public JdbcTemplate jdbcTemplate() {
+    //    return new JdbcTemplate(dataSource());
+    //}
 }

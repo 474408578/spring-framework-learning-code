@@ -1,6 +1,5 @@
-package com.xschen.spring.transaction.e_spread.config;
+package com.xschen.spring.transaction.f_listener.configuration;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -17,9 +16,9 @@ import javax.sql.DataSource;
  */
 
 @Configuration
-@ComponentScan("com.xschen.spring.transaction.e_spread")
 @EnableTransactionManagement
-public class TransactionSpreadConfiguration {
+@ComponentScan("com.xschen.spring.transaction.f_listener")
+public class TransactionListenerConfiguration {
 
     @Bean
     public DataSource dataSource() {
@@ -32,17 +31,12 @@ public class TransactionSpreadConfiguration {
     }
 
     @Bean
-    @Autowired
-    public JdbcTemplate jdbcTemplate(DataSource dataSource) {
-        JdbcTemplate jdbcTemplate = new JdbcTemplate();
-        jdbcTemplate.setDataSource(dataSource);
-        return jdbcTemplate;
+    public JdbcTemplate jdbcTemplate() {
+        return new JdbcTemplate(dataSource());
     }
 
     @Bean
     public TransactionManager transactionManager() {
-        DataSourceTransactionManager transactionManager = new DataSourceTransactionManager();
-        transactionManager.setDataSource(dataSource());
-        return transactionManager;
+        return new DataSourceTransactionManager(dataSource());
     }
 }

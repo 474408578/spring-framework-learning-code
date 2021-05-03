@@ -1,5 +1,7 @@
 package com.xschen.spring.b_annotation;
 
+import org.springframework.web.SpringServletContainerInitializer;
+import org.springframework.web.WebApplicationInitializer;
 import org.springframework.web.context.AbstractContextLoaderInitializer;
 import org.springframework.web.context.WebApplicationContext;
 import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;
@@ -7,7 +9,10 @@ import org.springframework.web.context.support.AnnotationConfigWebApplicationCon
 import javax.servlet.ServletContainerInitializer;
 
 /**
- *
+ * {@link WebApplicationInitializer} 实现类
+ * @see WebApplicationInitializer
+ * @see ServletContainerInitializer
+ * @see SpringServletContainerInitializer
  *
  * 借助Java的SPI技术，可以从项目或者项目依赖的Jar包中，找到一个
  * /META-INF/org.springframework.web.SpringServletContainerInitializer 的文件，并加载项目中所有它的实现类。

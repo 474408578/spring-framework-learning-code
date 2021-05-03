@@ -30,7 +30,7 @@ public class JdbcTemplateCRUDApplication {
 
 
         // 查单个
-//        List<User> users = jdbcTemplate.query("select * from tbl_user where id = ?", new BeanPropertyRowMapper<>(User.class), 2);
+        //List<User> users = jdbcTemplate.query("select * from tbl_user where id = ?", new BeanPropertyRowMapper<>(User.class), 2);
 //        System.out.println(users);
 
         Long count = jdbcTemplate.queryForObject("select count(id) from tbl_user", Long.class);

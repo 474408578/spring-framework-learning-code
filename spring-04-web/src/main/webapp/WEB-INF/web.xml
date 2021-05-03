@@ -15,3 +15,12 @@
         <param-value>classpath:spring-web.xml</param-value>
     </context-param>
 </web-app>
+
+<!-- 如何让web.xml将Spring的配置文件加载进来呢？什么时机加载？以及加载完成后，应该放在什么地方？-->
+<!-- 在Web容器刚刚启动时，借助Listener加载配置文件，放在 application 域中，任何位置都可以拿到 -->
+
+
+
+<!-- Spring Web中，有两种 Application Context -->
+<!-- 1. Root WebApplicationContext 通过 ContextLoaderListener 加载 -->
+<!-- 2. Servlet WebApplicationContext 通过 DispatcherServlet 加载  -->

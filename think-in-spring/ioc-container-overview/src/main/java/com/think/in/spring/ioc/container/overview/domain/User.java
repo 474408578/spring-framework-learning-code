@@ -8,6 +8,7 @@ import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Properties;
 
 /**
  * 用户类
@@ -23,6 +24,8 @@ public class User implements BeanNameAware {
     private String name;
 
     private Company company;
+
+    private Properties context;
 
     private City city;
 
@@ -57,6 +60,14 @@ public class User implements BeanNameAware {
 
     public void setCompany(Company company) {
         this.company = company;
+    }
+
+    public Properties getContext() {
+        return context;
+    }
+
+    public void setContext(Properties context) {
+        this.context = context;
     }
 
     public City getCity() {
@@ -112,6 +123,7 @@ public class User implements BeanNameAware {
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", company=" + company +
+                ", context=" + context +
                 ", city=" + city +
                 ", workCities=" + Arrays.toString(workCities) +
                 ", lifeCities=" + lifeCities +

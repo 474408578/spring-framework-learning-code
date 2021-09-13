@@ -21,6 +21,5 @@ public class MergedBeanDefinitionPostProcessorConfiguration implements MergedBea
             System.out.println("MergeDefinitionPostProcessor postProcessMergedBeanDefinition run ……");
             System.out.println(beanDefinition);
         }
-
     }
 }

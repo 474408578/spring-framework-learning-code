@@ -2,9 +2,11 @@ package com.xschen.spring.postprocessor.e_instantiation;
 
 import com.xschen.spring.postprocessor.e_instantiation.bean.Ball;
 import com.xschen.spring.postprocessor.e_instantiation.config.BallFactoryInstantiationProcessor;
+import org.springframework.beans.factory.config.InstantiationAwareBeanPostProcessor;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
+ * {@link InstantiationAwareBeanPostProcessor} 拦截并替换Bean的默认实例化动作及Bean的属性注入和自动装配演示。
  * @author xschen
  */
 

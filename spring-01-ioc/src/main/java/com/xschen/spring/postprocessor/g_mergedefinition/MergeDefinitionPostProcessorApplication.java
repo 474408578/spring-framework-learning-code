@@ -12,6 +12,5 @@ public class MergeDefinitionPostProcessorApplication {
         AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(
                 "com.xschen.spring.postprocessor.g_mergedefinition");
         ctx.close();
-
     }
 }

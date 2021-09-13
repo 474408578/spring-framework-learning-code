@@ -7,7 +7,7 @@ import java.lang.annotation.*;
 
 /**
  * @author xschen
- * 存在指定的bean时匹配
+ * 存在指定的bean时匹配, 实现类似 SpringBoot 中 ConditionalOnBean 类似的功能.
  */
 
 @Documented

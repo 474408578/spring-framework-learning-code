@@ -6,6 +6,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 
 /**
  * @author xschen
+ * @see org.springframework.context.annotation.ClassPathBeanDefinitionScanner
  */
 
 

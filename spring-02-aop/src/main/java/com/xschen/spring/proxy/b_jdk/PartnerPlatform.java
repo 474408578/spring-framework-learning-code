@@ -23,6 +23,10 @@ public class PartnerPlatform {
         partners.add(new IndividualPartner("高总裁"));
     }
 
+    /**
+     * @param budget 获取玩家需要的预算
+     * @return
+     */
     public static Partner getPartner(int budget) {
         Partner partner = partners.remove(0);
         /**
@@ -46,10 +50,11 @@ public class PartnerPlatform {
                     @Override
                     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
                         if (method.getName().equals("receiveMoney")) { // 对这个receiveMoney方法做处理
+                            // 实际接收到的钱
                             int receiveMoney = (int) args[0];
                             // 平台需要运营，抽成一半，receive
                             args[0] = receiveMoney / 2;
-                            // FIXME
+                            // 接收到的钱大于预算，可以匹配玩家
                             this.status = receiveMoney >= budget;
                         }
 

@@ -16,8 +16,9 @@ import java.io.IOException;
 public class GreenTypeFilter implements TypeFilter {
     /**
      *
-     * @param metadataReader 借助 Reader 可以获取到指定类的信息
-     * @param metadataReaderFactory 借助 ReaderFactory 可以获取到 Reader
+     * @param metadataReader 借助 MetadataReader 可以获取到正在扫描的类的信息
+     * @param metadataReaderFactory 借助 MetadataReaderFactory 可以获取到 其他类的MetadataReader，
+     *                              借助MetadataReader可以获取到指定类的信息
      * @return
      * @throws IOException
      */

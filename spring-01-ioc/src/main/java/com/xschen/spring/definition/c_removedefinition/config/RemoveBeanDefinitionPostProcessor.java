@@ -13,6 +13,7 @@ import org.springframework.stereotype.Component;
  * @author xschen
  *
  * 编写剔除BeanDefinition的后置处理器
+ * @see BeanFactoryPostProcessor
  */
 
 @Component

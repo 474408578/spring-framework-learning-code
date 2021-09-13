@@ -14,6 +14,13 @@ import org.springframework.context.annotation.Configuration;
 
 public class BallFactoryInstantiationProcessor implements InstantiationAwareBeanPostProcessor {
 
+    /**
+     * 拦截Bean的原本实例化方法，转为用此处的实例化。
+     * @param beanClass
+     * @param beanName
+     * @return
+     * @throws BeansException
+     */
     @Override
     public Object postProcessBeforeInstantiation(Class<?> beanClass, String beanName) throws BeansException {
 //        if (Ball.class.equals(beanClass)) {
@@ -27,7 +34,14 @@ public class BallFactoryInstantiationProcessor implements InstantiationAwareBean
         return null;
     }
 
-    // 返回true，则执行postProcessProperties方法，否则不执行
+    /**
+     * 在Bean的实例化之后处理
+     * @param bean
+     * @param beanName
+     * @return
+     * @throws BeansException
+     */
+    // 返回true，则执行后面的postProcessProperties方法，否则不执行
     @Override
     public boolean postProcessAfterInstantiation(Object bean, String beanName) throws BeansException {
         return true;

@@ -9,6 +9,7 @@ import org.springframework.beans.factory.support.BeanDefinitionBuilder;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 /**
+ * 编程式依赖注入与bean的初始化
  * @author xschen
  */
 
@@ -24,7 +25,7 @@ public class ProgrammaticInjectApplication {
         ctx.registerBeanDefinition("laowang", personDefinition);
 
         BeanDefinition catDefinition = BeanDefinitionBuilder.rootBeanDefinition(Cat.class)
-                .addPropertyReference("person", "laowang")
+                .addPropertyReference("person", "laowang") // 依赖注入
                 .addPropertyValue("name", "咪咪")
                 .getBeanDefinition();
         ctx.registerBeanDefinition("mimi", catDefinition);
@@ -32,15 +33,15 @@ public class ProgrammaticInjectApplication {
         // 原型bean的注册
         BeanDefinition dogDefinition = BeanDefinitionBuilder.rootBeanDefinition(Dog.class)
                 .addPropertyValue("name", "wangwang")
-                .addPropertyReference("person", "laowang")
-                .setScope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)
+                .addPropertyReference("person", "laowang") // 依赖注入
+                .setScope(ConfigurableBeanFactory.SCOPE_PROTOTYPE) // 原型Bean设置
                 .getBeanDefinition();
         ctx.registerBeanDefinition("wangwang", dogDefinition);
 
         BeanDefinition lazyDogDefinition = BeanDefinitionBuilder.rootBeanDefinition(Dog.class)
                 .addPropertyValue("name", "lazywangwang")
-                .addPropertyReference("person", "laowang")
-                .setLazyInit(true)
+                .addPropertyReference("person", "laowang") // 依赖注入
+                .setLazyInit(true) // 设置为懒加载
                 .setPrimary(true) // 设置为primary
                 .getBeanDefinition();
         ctx.registerBeanDefinition("lazywangwang", lazyDogDefinition);
@@ -53,10 +54,7 @@ public class ProgrammaticInjectApplication {
         Cat cat = ctx.getBean(Cat.class);
         System.out.println(cat);
 
-        Dog dog = (Dog) ctx.getBean(Dog.class);
+        Dog dog = ctx.getBean(Dog.class);
         System.out.println(dog);
-
-
-
     }
 }

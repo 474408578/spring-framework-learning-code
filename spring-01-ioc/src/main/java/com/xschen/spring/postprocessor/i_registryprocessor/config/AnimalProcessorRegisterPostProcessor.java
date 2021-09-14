@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 /**
  * @author xschen
  *
- * AnimalProcessorRegisterPostProcessor
+ * 注册animal的BeanDefinition的后置处理器
  */
 
 @Component

@@ -4,6 +4,7 @@ import com.xschen.spring.postprocessor.h_factoryprocessor.bean.Color;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanDefinition;
 import org.springframework.beans.factory.config.BeanFactoryPostProcessor;
+import org.springframework.beans.factory.config.BeanPostProcessor;
 import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
 import org.springframework.stereotype.Component;
 import org.springframework.util.ClassUtils;
@@ -13,6 +14,8 @@ import java.util.stream.Stream;
 
 /**
  * @author xschen
+ * @see BeanFactoryPostProcessor 处理目标：BeanDefinition; 执行时机：BeanDefinition 解析完毕，注册进 BeanFactory 的阶段（ bean 未实例化）
+ * @see BeanPostProcessor 处理目标：bean 实例; 执行时机：bean 的初始化阶段前后（已创建出 bean 对象）
  */
 
 @Component

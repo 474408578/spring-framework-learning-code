@@ -9,6 +9,8 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
  * @author xschen
  *
  * 不使用任何配置类/配置文件，向IOC容器注册一个Person对象，并注入属性值
+ * @see AnnotationConfigApplicationContext#AnnotationConfigApplicationContext(Class[])  无需手动refresh()
+ * @see AnnotationConfigApplicationContext#AnnotationConfigApplicationContext() 需要手抖动refresh()
  */
 
 

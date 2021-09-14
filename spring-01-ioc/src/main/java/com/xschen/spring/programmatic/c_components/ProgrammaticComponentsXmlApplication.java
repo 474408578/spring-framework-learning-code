@@ -2,11 +2,9 @@ package com.xschen.spring.programmatic.c_components;
 
 import com.xschen.spring.programmatic.c_components.bean.Animal;
 import com.xschen.spring.programmatic.c_components.bean.Cat;
-import com.xschen.spring.programmatic.c_components.bean.Person;
 import org.springframework.beans.MutablePropertyValues;
 import org.springframework.beans.factory.config.BeanDefinition;
 import org.springframework.beans.factory.config.RuntimeBeanReference;
-import org.springframework.beans.factory.support.BeanDefinitionBuilder;
 import org.springframework.beans.factory.xml.XmlBeanDefinitionReader;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.ClassPathBeanDefinitionScanner;
@@ -20,13 +18,15 @@ import java.util.Set;
  * @see ClassPathBeanDefinitionScanner
  */
 
-public class ProgrammaticComponentsApplication {
+
+public class ProgrammaticComponentsXmlApplication {
     public static void main(String[] args) {
         AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext();
-        BeanDefinition personBeanDefinition = BeanDefinitionBuilder
-                .rootBeanDefinition(Person.class)
-                .addPropertyValue("name", "老王").getBeanDefinition();
-        ctx.registerBeanDefinition("laowang", personBeanDefinition);
+
+        // Person使用xml配置文件
+        XmlBeanDefinitionReader reader = new XmlBeanDefinitionReader(ctx);
+        reader.loadBeanDefinitions(new ClassPathResource("programmatic/programmatic-components.xml"));
+
 
         // 类路径下的包扫描器
         ClassPathBeanDefinitionScanner scanner = new ClassPathBeanDefinitionScanner(ctx);

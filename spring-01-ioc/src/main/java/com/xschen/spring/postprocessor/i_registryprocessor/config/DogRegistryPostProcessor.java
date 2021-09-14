@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
 /**
  * @author xschen
  *
- * 注册dog的后置处理器
+ * 注册dog的beanDefinition的后置处理器
  */
 
 @Component

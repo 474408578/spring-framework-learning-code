@@ -25,6 +25,7 @@
         <module>data-binding</module>
         <module>conversion</module>
         <module>aop-overview</module>
+        <module>generic</module>
     </modules>
 
     <properties>

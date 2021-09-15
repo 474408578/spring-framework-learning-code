@@ -8,6 +8,7 @@ import java.util.List;
 
 /**
  * @author xschen
+ * 通过类路径META-INF/spring.factories去获取 MySQLJdbcConfiguration，OracleJdbcConfiguration，H2JdbcConfiguration
  */
 
 

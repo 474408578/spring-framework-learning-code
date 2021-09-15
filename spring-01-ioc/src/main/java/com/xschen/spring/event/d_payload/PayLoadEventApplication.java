@@ -3,10 +3,12 @@ package com.xschen.spring.event.d_payload;
 import com.xschen.spring.annotation.b_di.bean.Person;
 import com.xschen.spring.event.d_payload.component.PayLoadIntegerApplicationListener;
 import com.xschen.spring.event.d_payload.component.PayLoadObjectApplicationListener;
+import org.springframework.context.PayloadApplicationEvent;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 /**
  * @author xschen
+ * @see PayloadApplicationEvent 无需定义时间，泛型
  */
 
 

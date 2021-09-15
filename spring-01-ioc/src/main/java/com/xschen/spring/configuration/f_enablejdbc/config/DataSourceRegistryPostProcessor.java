@@ -15,6 +15,7 @@ import java.util.List;
 
 /**
  * @author xschen
+ * @see SpringFactoriesLoader#loadFactoryNames(Class, ClassLoader) 
  */
 
 

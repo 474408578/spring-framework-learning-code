@@ -6,6 +6,7 @@ import org.springframework.context.annotation.Conditional;
 import java.lang.annotation.*;
 
 /**
+ * 组件是否需要被注册
  * @author xschen
  */
 

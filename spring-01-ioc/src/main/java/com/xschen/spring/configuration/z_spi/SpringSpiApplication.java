@@ -8,6 +8,8 @@ import java.util.List;
 /**
  * @author xschen
  * spring的spi机制
+ * @see SpringFactoriesLoader#loadFactories(Class, ClassLoader)  加载并实例化
+ * @see SpringFactoriesLoader#loadFactoryNames(Class, ClassLoader) 加载全限定类名 
  */
 
 

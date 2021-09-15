@@ -4,6 +4,7 @@ import com.alibaba.druid.pool.DruidDataSource;
 import com.xschen.spring.configuration.d_enablejdbc.annotation.ConditionalOnClassName;
 import org.apache.commons.dbutils.QueryRunner;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Conditional;
 import org.springframework.context.annotation.Configuration;
 
 import javax.sql.DataSource;
@@ -11,6 +12,7 @@ import javax.sql.DataSource;
 /**
  * @author xschen
  * todo: 注册数据源，加载连接池
+ * @see Conditional
  */
 
 @Configuration

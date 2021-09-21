@@ -26,6 +26,7 @@
         <module>conversion</module>
         <module>aop-overview</module>
         <module>generic</module>
+        <module>aop-feature</module>
     </modules>
 
     <properties>

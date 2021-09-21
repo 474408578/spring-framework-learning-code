@@ -14,7 +14,7 @@ import java.lang.reflect.Method;
 
 public class CglibDynamicProxyDemo {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Throwable {
         Enhancer enhancer = new Enhancer();
         Class supperClass = DefaultEchoService.class;
         enhancer.setSuperclass(supperClass);

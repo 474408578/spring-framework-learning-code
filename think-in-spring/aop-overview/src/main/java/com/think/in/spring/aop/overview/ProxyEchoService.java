@@ -13,7 +13,7 @@ public class ProxyEchoService implements EchoService {
     }
 
     @Override
-    public String echo(String message) {
+    public String echo(String message) throws Throwable {
         long startTime = System.currentTimeMillis();
         String result = echoService.echo(message);
         long costTime = System.currentTimeMillis() - startTime;

@@ -12,7 +12,7 @@ import java.lang.reflect.Proxy;
 
 public class AopInterceptorDemo {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Throwable {
         ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
         /**
          * classLoader: 目标对象所属类的类加载器

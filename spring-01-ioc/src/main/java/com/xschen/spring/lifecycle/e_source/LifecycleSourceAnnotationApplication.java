@@ -32,6 +32,9 @@ public class LifecycleSourceAnnotationApplication {
         ctx.register(LifecycleNameReadBeanPostProcessor.class);
         ctx.register(LifecycleConfiguration.class);
 
+
+
+
         System.out.println("=======================刷新IOC容器========================");
 
         ctx.refresh();

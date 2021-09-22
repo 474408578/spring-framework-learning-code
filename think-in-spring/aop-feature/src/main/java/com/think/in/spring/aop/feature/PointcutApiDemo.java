@@ -1,6 +1,7 @@
 package com.think.in.spring.aop.feature;
 
 import com.think.in.spring.aop.feature.interceptor.EchoServiceMethodInterceptor;
+import com.think.in.spring.aop.feature.pointcut.EchoServiceEchoMethodPointcut;
 import com.think.in.spring.aop.feature.pointcut.EchoServicePointcut;
 import com.think.in.spring.aop.overview.DefaultEchoService;
 import com.think.in.spring.aop.overview.EchoService;
@@ -24,7 +25,12 @@ public class PointcutApiDemo {
 
     public static void main(String[] args) throws Throwable {
 
-        EchoServicePointcut echoServicePointcut = new EchoServicePointcut("echo", EchoService.class);
+        // 方案1：使用 EchoServicePointcut
+        //EchoServicePointcut echoServicePointcut = new EchoServicePointcut("echo", EchoService.class);
+
+        // 方案2：使用 EchoServiceEchoMethodPointcut
+        EchoServiceEchoMethodPointcut echoServicePointcut = EchoServiceEchoMethodPointcut.INSTANCE;
+
         EchoService defaultEchoService = new DefaultEchoService();
         // 将 Pointcut 适配成 advisor
         DefaultPointcutAdvisor advisor = new DefaultPointcutAdvisor(echoServicePointcut, new EchoServiceMethodInterceptor());

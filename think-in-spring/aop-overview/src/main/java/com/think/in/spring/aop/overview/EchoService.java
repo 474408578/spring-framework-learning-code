@@ -7,5 +7,5 @@ package com.think.in.spring.aop.overview;
  */
 
 public interface EchoService {
-    String echo(String message) throws NullPointerException;
+    String echo(String message) throws Throwable ;
 }

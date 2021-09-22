@@ -12,7 +12,7 @@ import java.lang.reflect.Proxy;
 
 public class JdkDynamicProxyDemo {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Throwable {
         ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
         Object proxy = Proxy.newProxyInstance(classLoader, new Class[] {EchoService.class}, new InvocationHandler() {
             @Override

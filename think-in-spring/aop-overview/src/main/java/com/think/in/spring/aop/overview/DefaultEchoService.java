@@ -1,5 +1,7 @@
 package com.think.in.spring.aop.overview;
 
+import java.util.Random;
+
 /**
  * 默认 {@link EchoService} 实现
  * @author xschen
@@ -8,7 +10,11 @@ package com.think.in.spring.aop.overview;
 
 public class DefaultEchoService  implements EchoService {
     @Override
-    public String echo(String message) {
+    public String echo(String message) throws Throwable {
+        Random random = new Random();
+        if (random.nextBoolean()) {
+            throw new RuntimeException("For Purpose.");
+        }
         return "[ECHO] " + message;
     }
 }

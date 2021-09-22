@@ -2,10 +2,12 @@ package com.xschen.spring.lifecycle.e_source;
 
 import com.xschen.spring.lifecycle.e_source.bean.Cat;
 import com.xschen.spring.lifecycle.e_source.bean.Person;
+import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
  * @author xschen
+ * @see AbstractApplicationContext#refresh()
  */
 
 

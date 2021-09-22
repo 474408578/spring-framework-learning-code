@@ -8,7 +8,7 @@ package com.think.in.spring.aop.overview;
 
 public class StaticProxyDemo {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Throwable {
         EchoService echoService = new ProxyEchoService(new DefaultEchoService());
         echoService.echo("Hello, World");
     }

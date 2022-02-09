@@ -35,6 +35,8 @@ public class User implements BeanNameAware {
 
     private Resource configFileLocation;
 
+    private String contextAsText;
+
     // 当前Bean的名称
     private String beanName;
 
@@ -102,6 +104,18 @@ public class User implements BeanNameAware {
         this.configFileLocation = configFileLocation;
     }
 
+    public String getContextAsText() {
+        return contextAsText;
+    }
+
+    public void setContextAsText(String contextAsText) {
+        this.contextAsText = contextAsText;
+    }
+
+    public String getBeanName() {
+        return beanName;
+    }
+
     @Override
     public void setBeanName(String name) {
         this.beanName = name;
@@ -128,6 +142,7 @@ public class User implements BeanNameAware {
                 ", workCities=" + Arrays.toString(workCities) +
                 ", lifeCities=" + lifeCities +
                 ", configFileLocation=" + configFileLocation +
+                ", contextAsText='" + contextAsText + '\'' +
                 ", beanName='" + beanName + '\'' +
                 '}';
     }

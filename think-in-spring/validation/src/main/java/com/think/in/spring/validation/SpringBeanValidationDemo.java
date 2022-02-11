@@ -25,8 +25,8 @@ public class SpringBeanValidationDemo {
         ConfigurableApplicationContext context =
                 new ClassPathXmlApplicationContext("classpath:/META-INF/bean-validation-context.xml");
 
-        //Validator validator = context.getBean(Validator.class);
-        //System.out.println(validator instanceof LocalValidatorFactoryBean);
+        Validator validator = context.getBean(Validator.class);
+        System.out.println(validator instanceof LocalValidatorFactoryBean);
         UserProcessor userProcessor = context.getBean(UserProcessor.class);
         userProcessor.process(new User());
 

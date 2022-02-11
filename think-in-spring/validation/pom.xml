@@ -40,6 +40,11 @@
             <groupId>org.mortbay.jasper</groupId>
             <artifactId>apache-el</artifactId>
         </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
     </dependencies>
 
 </project>
